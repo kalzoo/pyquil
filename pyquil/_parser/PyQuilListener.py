@@ -390,7 +390,7 @@ class PyQuilListener(QuilListener):
         self.result = []
 
     def exitDefMeasCalibration(self, ctx:QuilParser.DefMeasCalibrationContext):
-        memory_reference = _addr(ctx.addr())
+        memory_reference = ctx.name().getText() if ctx.name() is not None else None
         qubit = _formal_qubit(ctx.formalQubit())
         instrs = self.result
 
