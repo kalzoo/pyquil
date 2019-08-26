@@ -952,7 +952,8 @@ class Capture(AbstractInstruction):
         self.memory_region = memory_region
 
     def out(self):
-        return f'CAPTURE {self.qubit} "{self.frame}" {self.waveform.out()} {self.memory_region.out()}'
+        return f'CAPTURE {self.qubit} "{self.frame}" {self.waveform.out()}' \
+            + (' ' + self.memory_region.out() if self.memory_region is not None else '')
 
 
 class RawCapture(AbstractInstruction):
