@@ -156,7 +156,7 @@ realN               : FLOAT | INT ;
 
 // Analog control
 
-defWaveform         : DEFWAVEFORM name ( LPAREN param (COMMA param)* RPAREN )? COLON NEWLINE matrix ;
+defWaveform         : DEFWAVEFORM name ( LPAREN param (COMMA param)* RPAREN )? realN COLON NEWLINE matrix ;
 pulse               : PULSE formalQubit+ frame waveform ;
 setFrequency        : SETFREQUENCY formalQubit+ frame expression ;
 setPhase            : SETPHASE formalQubit+ frame expression ;

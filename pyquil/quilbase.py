@@ -988,10 +988,11 @@ class Fence(AbstractInstruction):
 
 
 class DefWaveform(AbstractInstruction):
-    def __init__(self, name, parameters, entries):
+    def __init__(self, name, parameters, sample_rate, entries):
         self.name = name
         self.parameters = parameters
         self.entries = entries
+        self.sample_rate = sample_rate
 
     def out(self):
         ret = f"DEFWAVEFORM {self.name}"
@@ -1001,7 +1002,7 @@ class DefWaveform(AbstractInstruction):
             for param in params:
                 ret += f", {param}"
             ret += ")"
-        ret += ":\n    "
+        ret += f" {self.sample_rate} :\n    "
         first_entry, *entries = self.entries
         ret += str(first_entry)
         for entry in entries:

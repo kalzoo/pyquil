@@ -401,6 +401,7 @@ class PyQuilListener(QuilListener):
     def exitDefWaveform(self, ctx:QuilParser.DefWaveformContext):
         name = ctx.name().getText()
         parameters = [param.getText() for param in ctx.param()]
+        sample_rate = float(ctx.realN().getText())
         entries = sum(_matrix(ctx.matrix()), [])
         self.result.append(DefWaveform(name, parameters, entries))
 
