@@ -52,7 +52,7 @@ class Program(object):
     def __init__(self, *instructions):
         self._defined_gates = []
         self.calibrations = list()
-        self.waveforms = list()
+        self.waveforms = dict()
         # Implementation note: the key difference between the private _instructions and
         # the public instructions property below is that the private _instructions list
         # may contain placeholder labels.
@@ -191,7 +191,7 @@ class Program(object):
             elif isinstance(instruction, DefCalibration) or isinstance(instruction, DefMeasureCalibration):
                 self.calibrations.append(instruction)
             elif isinstance(instruction, DefWaveform):
-                self.waveforms.append(instruction)
+                self.waveforms[instruction.name] = instruction
             elif isinstance(instruction, AbstractInstruction):
                 self._instructions.append(instruction)
                 self._synthesized_instructions = None
@@ -497,6 +497,7 @@ class Program(object):
         """
         return '\n'.join(itertools.chain(
             (dg.out() for dg in self._defined_gates),
+            (wf.out for (wf_name, wf) in self.waveforms.items()),
             (cal.out() for cal in self.calibrations),
             (instr.out() for instr in self.instructions),
             [''],
