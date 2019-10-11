@@ -631,6 +631,25 @@ class Addr(MemoryReference):
         super(Addr, self).__init__("ro", offset=value, declared_size=None)
 
 
+class Frame(QuilAtom):
+    """
+    Representation of a frame descriptor.
+
+    :param qubits: List of qubits associated to the frame.
+    :param name: String name associated to the frame.
+    """
+
+    def __init__(self, qubits, name):
+        self.name = name
+        self.qubits = qubits
+
+    def __hash__(self):
+        return hash((self.name, self.qubits))
+
+    def out(self):
+        return " ".join([q.out() for q in self.qubits]) + f'" {self.name}"'
+
+
 class Waveform(QuilAtom):
     """
     Representation of a Waveform reference.

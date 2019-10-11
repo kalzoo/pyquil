@@ -1,4 +1,4 @@
-# Generated from Quil.g4 by ANTLR 4.7.1
+# Generated from Quil.g4 by ANTLR 4.7.2
 from antlr4 import *
 if __name__ is not None and "." in __name__:
     from .QuilParser import QuilParser
@@ -557,6 +557,33 @@ class QuilListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by QuilParser#defFrame.
+    def enterDefFrame(self, ctx:QuilParser.DefFrameContext):
+        pass
+
+    # Exit a parse tree produced by QuilParser#defFrame.
+    def exitDefFrame(self, ctx:QuilParser.DefFrameContext):
+        pass
+
+
+    # Enter a parse tree produced by QuilParser#frameSpec.
+    def enterFrameSpec(self, ctx:QuilParser.FrameSpecContext):
+        pass
+
+    # Exit a parse tree produced by QuilParser#frameSpec.
+    def exitFrameSpec(self, ctx:QuilParser.FrameSpecContext):
+        pass
+
+
+    # Enter a parse tree produced by QuilParser#frameAttr.
+    def enterFrameAttr(self, ctx:QuilParser.FrameAttrContext):
+        pass
+
+    # Exit a parse tree produced by QuilParser#frameAttr.
+    def exitFrameAttr(self, ctx:QuilParser.FrameAttrContext):
+        pass
+
+
     # Enter a parse tree produced by QuilParser#defWaveform.
     def enterDefWaveform(self, ctx:QuilParser.DefWaveformContext):
         pass
@@ -566,12 +593,48 @@ class QuilListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by QuilParser#defCalibration.
+    def enterDefCalibration(self, ctx:QuilParser.DefCalibrationContext):
+        pass
+
+    # Exit a parse tree produced by QuilParser#defCalibration.
+    def exitDefCalibration(self, ctx:QuilParser.DefCalibrationContext):
+        pass
+
+
+    # Enter a parse tree produced by QuilParser#defMeasCalibration.
+    def enterDefMeasCalibration(self, ctx:QuilParser.DefMeasCalibrationContext):
+        pass
+
+    # Exit a parse tree produced by QuilParser#defMeasCalibration.
+    def exitDefMeasCalibration(self, ctx:QuilParser.DefMeasCalibrationContext):
+        pass
+
+
     # Enter a parse tree produced by QuilParser#pulse.
     def enterPulse(self, ctx:QuilParser.PulseContext):
         pass
 
     # Exit a parse tree produced by QuilParser#pulse.
     def exitPulse(self, ctx:QuilParser.PulseContext):
+        pass
+
+
+    # Enter a parse tree produced by QuilParser#capture.
+    def enterCapture(self, ctx:QuilParser.CaptureContext):
+        pass
+
+    # Exit a parse tree produced by QuilParser#capture.
+    def exitCapture(self, ctx:QuilParser.CaptureContext):
+        pass
+
+
+    # Enter a parse tree produced by QuilParser#rawCapture.
+    def enterRawCapture(self, ctx:QuilParser.RawCaptureContext):
+        pass
+
+    # Exit a parse tree produced by QuilParser#rawCapture.
+    def exitRawCapture(self, ctx:QuilParser.RawCaptureContext):
         pass
 
 
@@ -620,42 +683,6 @@ class QuilListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by QuilParser#capture.
-    def enterCapture(self, ctx:QuilParser.CaptureContext):
-        pass
-
-    # Exit a parse tree produced by QuilParser#capture.
-    def exitCapture(self, ctx:QuilParser.CaptureContext):
-        pass
-
-
-    # Enter a parse tree produced by QuilParser#rawCapture.
-    def enterRawCapture(self, ctx:QuilParser.RawCaptureContext):
-        pass
-
-    # Exit a parse tree produced by QuilParser#rawCapture.
-    def exitRawCapture(self, ctx:QuilParser.RawCaptureContext):
-        pass
-
-
-    # Enter a parse tree produced by QuilParser#defCalibration.
-    def enterDefCalibration(self, ctx:QuilParser.DefCalibrationContext):
-        pass
-
-    # Exit a parse tree produced by QuilParser#defCalibration.
-    def exitDefCalibration(self, ctx:QuilParser.DefCalibrationContext):
-        pass
-
-
-    # Enter a parse tree produced by QuilParser#defMeasCalibration.
-    def enterDefMeasCalibration(self, ctx:QuilParser.DefMeasCalibrationContext):
-        pass
-
-    # Exit a parse tree produced by QuilParser#defMeasCalibration.
-    def exitDefMeasCalibration(self, ctx:QuilParser.DefMeasCalibrationContext):
-        pass
-
-
     # Enter a parse tree produced by QuilParser#delay.
     def enterDelay(self, ctx:QuilParser.DelayContext):
         pass
@@ -692,15 +719,6 @@ class QuilListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by QuilParser#frame.
-    def enterFrame(self, ctx:QuilParser.FrameContext):
-        pass
-
-    # Exit a parse tree produced by QuilParser#frame.
-    def exitFrame(self, ctx:QuilParser.FrameContext):
-        pass
-
-
     # Enter a parse tree produced by QuilParser#waveform.
     def enterWaveform(self, ctx:QuilParser.WaveformContext):
         pass
@@ -716,6 +734,15 @@ class QuilListener(ParseTreeListener):
 
     # Exit a parse tree produced by QuilParser#colonTerminatedName.
     def exitColonTerminatedName(self, ctx:QuilParser.ColonTerminatedNameContext):
+        pass
+
+
+    # Enter a parse tree produced by QuilParser#frame.
+    def enterFrame(self, ctx:QuilParser.FrameContext):
+        pass
+
+    # Exit a parse tree produced by QuilParser#frame.
+    def exitFrame(self, ctx:QuilParser.FrameContext):
         pass
 
 

@@ -156,27 +156,34 @@ realN               : FLOAT | INT ;
 
 // Analog control
 
+defFrame            : DEFFRAME frame ( COLON frameSpec+ )? ;
+frameSpec           : TAB frameAttr COLON expression ;
+frameAttr           : SAMPLERATE | INITIALFREQUENCY ;
+
 defWaveform         : DEFWAVEFORM name ( LPAREN param (COMMA param)* RPAREN )? realN COLON NEWLINE matrix ;
-pulse               : PULSE formalQubit+ frame waveform ;
-setFrequency        : SETFREQUENCY formalQubit+ frame expression ;
-setPhase            : SETPHASE formalQubit+ frame expression ;
-shiftPhase          : SHIFTPHASE formalQubit+ frame expression ;
-swapPhases          : SWAPPHASES formalQubit+ frame qubit+ frame ;
-setScale            : SETSCALE formalQubit+ frame expression ;
-capture             : CAPTURE formalQubit frame waveform addr ;
-rawCapture          : RAWCAPTURE formalQubit+ frame expression addr ;
 defCalibration      : DEFCAL name (LPAREN param ( COMMA param )* RPAREN)? formalQubit+ COLON ( NEWLINE TAB instr )* ;
 defMeasCalibration  : DEFCAL MEASURE formalQubit ( name )? COLON ( NEWLINE TAB instr )* ;
-delay               : DELAY formalQubit expression ;
+
+pulse               : PULSE frame waveform ;
+capture             : CAPTURE frame waveform addr ;
+rawCapture          : RAWCAPTURE frame expression addr ;
+
+setFrequency        : SETFREQUENCY frame expression ;
+setPhase            : SETPHASE frame expression ;
+shiftPhase          : SHIFTPHASE frame expression ;
+swapPhases          : SWAPPHASES frame qubit+ frame ;
+setScale            : SETSCALE frame expression ;
+
+delay               : DELAY formalQubit+ STRING* expression ;
 fence               : FENCE formalQubit+ ;
 
 formalQubit         : qubit | qubitVariable ;
 namedParam          : colonTerminatedName expression ;
-frame               : STRING ;
 waveform            : name (LPAREN namedParam ( COMMA namedParam )* RPAREN)? ;
 colonTerminatedName : COLONTERMIDENT ;
+frame               : formalQubit+ STRING ;
+
 // built-in waveform types include: "flat", "gaussian", "draggaussian", "erfsquare"
-// TODO: parameters might be named.
 
 
 ////////////////////
@@ -256,8 +263,11 @@ POWER               : '^' ;
 
 // analog keywords
 
+DEFFRAME            : 'DEFFRAME' ;
+SAMPLERATE          : 'SAMPLE-RATE' ;
+INITIALFREQUENCY    : 'INITIAL-FREQUENCY' ;
 DEFWAVEFORM         : 'DEFWAVEFORM' ;
-PULSE               : 'PULSE ';
+PULSE               : 'PULSE' ;
 SETFREQUENCY        : 'SET-FREQUENCY' ;
 SETPHASE            : 'SET-PHASE' ;
 SHIFTPHASE          : 'SHIFT-PHASE' ;
