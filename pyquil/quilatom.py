@@ -640,14 +640,48 @@ class Frame(QuilAtom):
     """
 
     def __init__(self, qubits, name):
+        assert isinstance(qubits, list)
+        assert isinstance(name, str)
         self.name = name
         self.qubits = qubits
 
+    def __eq__(self, other):
+        return (self.name == other.name) and (self.qubits == other.qubits)
+
     def __hash__(self):
-        return hash((self.name, self.qubits))
+        return hash((self.name, tuple(self.qubits)))
+
+    def __str__(self):
+        return self.out()
 
     def out(self):
-        return " ".join([q.out() for q in self.qubits]) + f'" {self.name}"'
+        return " ".join([q.out() for q in self.qubits]) + f' "{self.name}"'
+
+
+class AffineKernelFamily(QuilAtom):
+    """
+    Representation of a family of affine kernels.
+
+    NOTE: At present, we support only families of size 1.
+
+    :param kernels: List  (or, in the case of a family of size 1, waveform) of individual kernel waveforms.
+    :param matrix: Matrix (or, in the case of a family of size 1, scalar)   by which to recombine kernel convolutions.
+    :param offset: Vector (or, in the case of a family of size 1, offset)   by which to offset recombined kernel convolutions.
+    """
+
+    def __init__(self, kernels, matrix, offset):
+        assert isinstance(kernels, Waveform)
+        assert isinstance(matrix, complex)
+        assert isinstance(offset, float)
+        self.kernels = kernels
+        self.matrix = matrix
+        self.offset = offset
+
+    def __hash__(self):
+        return hash((self.kernels, self.matrix, self.offset))
+
+    def out(self):
+        return f"{self.matrix}*({self.kernels})+({self.offset})"
 
 
 class Waveform(QuilAtom):
@@ -681,4 +715,7 @@ class Waveform(QuilAtom):
             for (param_name, param_value) in params:
                 ret += f", {param_name}: {param_value}"
             return ret + ")"
+
+    def __str__(self):
+        return self.out()
 

@@ -8,8 +8,8 @@ import sys
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3]")
-        buf.write("\u02d0\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3^")
+        buf.write("\u02d9\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16")
         buf.write("\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4\23\t\23")
         buf.write("\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31")
@@ -65,18 +65,19 @@ def serializedATN():
         buf.write(";\u0251\n;\f;\16;\u0254\13;\3;\3;\5;\u0258\n;\3;\6;\u025b")
         buf.write("\n;\r;\16;\u025c\3;\3;\3;\3;\7;\u0263\n;\f;\16;\u0266")
         buf.write("\13;\3<\3<\3<\3<\5<\u026c\n<\3<\3<\3<\3<\7<\u0272\n<\f")
-        buf.write("<\16<\u0275\13<\3=\3=\3=\3=\3>\3>\3>\3>\3>\3?\3?\3?\3")
-        buf.write("?\3?\3@\3@\3@\3@\3A\3A\3A\3A\3B\3B\3B\3B\3C\3C\3C\6C\u0294")
-        buf.write("\nC\rC\16C\u0295\3C\3C\3D\3D\3D\3D\3E\3E\6E\u02a0\nE\r")
-        buf.write("E\16E\u02a1\3E\7E\u02a5\nE\fE\16E\u02a8\13E\3E\3E\3F\3")
-        buf.write("F\6F\u02ae\nF\rF\16F\u02af\3G\3G\5G\u02b4\nG\3H\3H\3H")
-        buf.write("\3I\3I\3I\3I\3I\7I\u02be\nI\fI\16I\u02c1\13I\3I\3I\5I")
-        buf.write("\u02c5\nI\3J\3J\3K\6K\u02ca\nK\rK\16K\u02cb\3K\3K\3K\2")
-        buf.write("\3`L\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,.\60")
-        buf.write("\62\64\668:<>@BDFHJLNPRTVXZ\\^`bdfhjlnprtvxz|~\u0080\u0082")
-        buf.write("\u0084\u0086\u0088\u008a\u008c\u008e\u0090\u0092\u0094")
-        buf.write("\2\16\3\2GH\3\2\24\25\3\2\26\31\3\2\32\35\3\2\36!\3\2")
-        buf.write("%)\4\2IIKK\3\2\65\66\3\2\63\64\3\2.\62\3\2KL\3\29:\2\u02ef")
+        buf.write("<\16<\u0275\13<\3=\5=\u0278\n=\3=\3=\3=\3=\3>\5>\u027f")
+        buf.write("\n>\3>\3>\3>\3>\3>\3?\5?\u0287\n?\3?\3?\3?\3?\3?\3@\3")
+        buf.write("@\3@\3@\3A\3A\3A\3A\3B\3B\3B\3B\3C\3C\3C\6C\u029d\nC\r")
+        buf.write("C\16C\u029e\3C\3C\3D\3D\3D\3D\3E\3E\6E\u02a9\nE\rE\16")
+        buf.write("E\u02aa\3E\7E\u02ae\nE\fE\16E\u02b1\13E\3E\3E\3F\3F\6")
+        buf.write("F\u02b7\nF\rF\16F\u02b8\3G\3G\5G\u02bd\nG\3H\3H\3H\3I")
+        buf.write("\3I\3I\3I\3I\7I\u02c7\nI\fI\16I\u02ca\13I\3I\3I\5I\u02ce")
+        buf.write("\nI\3J\3J\3K\6K\u02d3\nK\rK\16K\u02d4\3K\3K\3K\2\3`L\2")
+        buf.write("\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,.\60\62\64")
+        buf.write("\668:<>@BDFHJLNPRTVXZ\\^`bdfhjlnprtvxz|~\u0080\u0082\u0084")
+        buf.write("\u0086\u0088\u008a\u008c\u008e\u0090\u0092\u0094\2\16")
+        buf.write("\3\2HI\3\2\24\25\3\2\26\31\3\2\32\35\3\2\36!\3\2%)\4\2")
+        buf.write("JJLL\3\2\65\66\3\2\63\64\3\2.\62\3\2LM\4\2>>AA\2\u02fb")
         buf.write("\2\u0097\3\2\2\2\4\u00b2\3\2\2\2\6\u00d0\3\2\2\2\b\u00d5")
         buf.write("\3\2\2\2\n\u00eb\3\2\2\2\f\u00ed\3\2\2\2\16\u00ef\3\2")
         buf.write("\2\2\20\u00f1\3\2\2\2\22\u00f3\3\2\2\2\24\u0108\3\2\2")
@@ -93,19 +94,19 @@ def serializedATN():
         buf.write("\\\u01e6\3\2\2\2^\u01f1\3\2\2\2`\u0203\3\2\2\2b\u0213")
         buf.write("\3\2\2\2d\u0215\3\2\2\2f\u0218\3\2\2\2h\u0220\3\2\2\2")
         buf.write("j\u0223\3\2\2\2l\u0225\3\2\2\2n\u022f\3\2\2\2p\u0234\3")
-        buf.write("\2\2\2r\u0236\3\2\2\2t\u024a\3\2\2\2v\u0267\3\2\2\2x\u0276")
-        buf.write("\3\2\2\2z\u027a\3\2\2\2|\u027f\3\2\2\2~\u0284\3\2\2\2")
-        buf.write("\u0080\u0288\3\2\2\2\u0082\u028c\3\2\2\2\u0084\u0290\3")
-        buf.write("\2\2\2\u0086\u0299\3\2\2\2\u0088\u029d\3\2\2\2\u008a\u02ab")
-        buf.write("\3\2\2\2\u008c\u02b3\3\2\2\2\u008e\u02b5\3\2\2\2\u0090")
-        buf.write("\u02b8\3\2\2\2\u0092\u02c6\3\2\2\2\u0094\u02c9\3\2\2\2")
+        buf.write("\2\2\2r\u0236\3\2\2\2t\u024a\3\2\2\2v\u0267\3\2\2\2x\u0277")
+        buf.write("\3\2\2\2z\u027e\3\2\2\2|\u0286\3\2\2\2~\u028d\3\2\2\2")
+        buf.write("\u0080\u0291\3\2\2\2\u0082\u0295\3\2\2\2\u0084\u0299\3")
+        buf.write("\2\2\2\u0086\u02a2\3\2\2\2\u0088\u02a6\3\2\2\2\u008a\u02b4")
+        buf.write("\3\2\2\2\u008c\u02bc\3\2\2\2\u008e\u02be\3\2\2\2\u0090")
+        buf.write("\u02c1\3\2\2\2\u0092\u02cf\3\2\2\2\u0094\u02d2\3\2\2\2")
         buf.write("\u0096\u0098\5\4\3\2\u0097\u0096\3\2\2\2\u0097\u0098\3")
-        buf.write("\2\2\2\u0098\u00a1\3\2\2\2\u0099\u009b\7Z\2\2\u009a\u0099")
+        buf.write("\2\2\2\u0098\u00a1\3\2\2\2\u0099\u009b\7[\2\2\u009a\u0099")
         buf.write("\3\2\2\2\u009b\u009c\3\2\2\2\u009c\u009a\3\2\2\2\u009c")
         buf.write("\u009d\3\2\2\2\u009d\u009e\3\2\2\2\u009e\u00a0\5\4\3\2")
         buf.write("\u009f\u009a\3\2\2\2\u00a0\u00a3\3\2\2\2\u00a1\u009f\3")
         buf.write("\2\2\2\u00a1\u00a2\3\2\2\2\u00a2\u00a7\3\2\2\2\u00a3\u00a1")
-        buf.write("\3\2\2\2\u00a4\u00a6\7Z\2\2\u00a5\u00a4\3\2\2\2\u00a6")
+        buf.write("\3\2\2\2\u00a4\u00a6\7[\2\2\u00a5\u00a4\3\2\2\2\u00a6")
         buf.write("\u00a9\3\2\2\2\u00a7\u00a5\3\2\2\2\u00a7\u00a8\3\2\2\2")
         buf.write("\u00a8\u00aa\3\2\2\2\u00a9\u00a7\3\2\2\2\u00aa\u00ab\7")
         buf.write("\2\2\3\u00ab\3\3\2\2\2\u00ac\u00b3\5\22\n\2\u00ad\u00b3")
@@ -136,52 +137,52 @@ def serializedATN():
         buf.write("\u00cf\3\2\2\2\u00d1\7\3\2\2\2\u00d2\u00d4\5\20\t\2\u00d3")
         buf.write("\u00d2\3\2\2\2\u00d4\u00d7\3\2\2\2\u00d5\u00d3\3\2\2\2")
         buf.write("\u00d5\u00d6\3\2\2\2\u00d6\u00d8\3\2\2\2\u00d7\u00d5\3")
-        buf.write("\2\2\2\u00d8\u00e4\5\n\6\2\u00d9\u00da\7P\2\2\u00da\u00df")
-        buf.write("\5\16\b\2\u00db\u00dc\7O\2\2\u00dc\u00de\5\16\b\2\u00dd")
+        buf.write("\2\2\2\u00d8\u00e4\5\n\6\2\u00d9\u00da\7Q\2\2\u00da\u00df")
+        buf.write("\5\16\b\2\u00db\u00dc\7P\2\2\u00dc\u00de\5\16\b\2\u00dd")
         buf.write("\u00db\3\2\2\2\u00de\u00e1\3\2\2\2\u00df\u00dd\3\2\2\2")
         buf.write("\u00df\u00e0\3\2\2\2\u00e0\u00e2\3\2\2\2\u00e1\u00df\3")
-        buf.write("\2\2\2\u00e2\u00e3\7Q\2\2\u00e3\u00e5\3\2\2\2\u00e4\u00d9")
+        buf.write("\2\2\2\u00e2\u00e3\7R\2\2\u00e3\u00e5\3\2\2\2\u00e4\u00d9")
         buf.write("\3\2\2\2\u00e4\u00e5\3\2\2\2\u00e5\u00e7\3\2\2\2\u00e6")
         buf.write("\u00e8\5\f\7\2\u00e7\u00e6\3\2\2\2\u00e8\u00e9\3\2\2\2")
         buf.write("\u00e9\u00e7\3\2\2\2\u00e9\u00ea\3\2\2\2\u00ea\t\3\2\2")
-        buf.write("\2\u00eb\u00ec\7I\2\2\u00ec\13\3\2\2\2\u00ed\u00ee\7K")
+        buf.write("\2\u00eb\u00ec\7J\2\2\u00ec\13\3\2\2\2\u00ed\u00ee\7L")
         buf.write("\2\2\u00ee\r\3\2\2\2\u00ef\u00f0\5`\61\2\u00f0\17\3\2")
         buf.write("\2\2\u00f1\u00f2\t\2\2\2\u00f2\21\3\2\2\2\u00f3\u00f4")
-        buf.write("\7\3\2\2\u00f4\u0102\5\n\6\2\u00f5\u00f6\7P\2\2\u00f6")
-        buf.write("\u00fb\5\24\13\2\u00f7\u00f8\7O\2\2\u00f8\u00fa\5\24\13")
+        buf.write("\7\3\2\2\u00f4\u0102\5\n\6\2\u00f5\u00f6\7Q\2\2\u00f6")
+        buf.write("\u00fb\5\24\13\2\u00f7\u00f8\7P\2\2\u00f8\u00fa\5\24\13")
         buf.write("\2\u00f9\u00f7\3\2\2\2\u00fa\u00fd\3\2\2\2\u00fb\u00f9")
         buf.write("\3\2\2\2\u00fb\u00fc\3\2\2\2\u00fc\u00fe\3\2\2\2\u00fd")
-        buf.write("\u00fb\3\2\2\2\u00fe\u00ff\7Q\2\2\u00ff\u0103\3\2\2\2")
+        buf.write("\u00fb\3\2\2\2\u00fe\u00ff\7R\2\2\u00ff\u0103\3\2\2\2")
         buf.write("\u0100\u0101\7\23\2\2\u0101\u0103\5\26\f\2\u0102\u00f5")
         buf.write("\3\2\2\2\u0102\u0100\3\2\2\2\u0102\u0103\3\2\2\2\u0103")
-        buf.write("\u0104\3\2\2\2\u0104\u0105\7T\2\2\u0105\u0106\7Z\2\2\u0106")
-        buf.write("\u0107\5\30\r\2\u0107\23\3\2\2\2\u0108\u0109\7U\2\2\u0109")
-        buf.write("\u010a\7I\2\2\u010a\25\3\2\2\2\u010b\u010c\t\3\2\2\u010c")
-        buf.write("\27\3\2\2\2\u010d\u010e\5\32\16\2\u010e\u010f\7Z\2\2\u010f")
+        buf.write("\u0104\3\2\2\2\u0104\u0105\7U\2\2\u0105\u0106\7[\2\2\u0106")
+        buf.write("\u0107\5\30\r\2\u0107\23\3\2\2\2\u0108\u0109\7V\2\2\u0109")
+        buf.write("\u010a\7J\2\2\u010a\25\3\2\2\2\u010b\u010c\t\3\2\2\u010c")
+        buf.write("\27\3\2\2\2\u010d\u010e\5\32\16\2\u010e\u010f\7[\2\2\u010f")
         buf.write("\u0111\3\2\2\2\u0110\u010d\3\2\2\2\u0111\u0114\3\2\2\2")
         buf.write("\u0112\u0110\3\2\2\2\u0112\u0113\3\2\2\2\u0113\u0115\3")
         buf.write("\2\2\2\u0114\u0112\3\2\2\2\u0115\u0116\5\32\16\2\u0116")
-        buf.write("\31\3\2\2\2\u0117\u0118\7Y\2\2\u0118\u011d\5`\61\2\u0119")
-        buf.write("\u011a\7O\2\2\u011a\u011c\5`\61\2\u011b\u0119\3\2\2\2")
+        buf.write("\31\3\2\2\2\u0117\u0118\7Z\2\2\u0118\u011d\5`\61\2\u0119")
+        buf.write("\u011a\7P\2\2\u011a\u011c\5`\61\2\u011b\u0119\3\2\2\2")
         buf.write("\u011c\u011f\3\2\2\2\u011d\u011b\3\2\2\2\u011d\u011e\3")
         buf.write("\2\2\2\u011e\33\3\2\2\2\u011f\u011d\3\2\2\2\u0120\u0121")
-        buf.write("\7\4\2\2\u0121\u012d\5\n\6\2\u0122\u0123\7P\2\2\u0123")
-        buf.write("\u0128\5\24\13\2\u0124\u0125\7O\2\2\u0125\u0127\5\24\13")
+        buf.write("\7\4\2\2\u0121\u012d\5\n\6\2\u0122\u0123\7Q\2\2\u0123")
+        buf.write("\u0128\5\24\13\2\u0124\u0125\7P\2\2\u0125\u0127\5\24\13")
         buf.write("\2\u0126\u0124\3\2\2\2\u0127\u012a\3\2\2\2\u0128\u0126")
         buf.write("\3\2\2\2\u0128\u0129\3\2\2\2\u0129\u012b\3\2\2\2\u012a")
-        buf.write("\u0128\3\2\2\2\u012b\u012c\7Q\2\2\u012c\u012e\3\2\2\2")
+        buf.write("\u0128\3\2\2\2\u012b\u012c\7R\2\2\u012c\u012e\3\2\2\2")
         buf.write("\u012d\u0122\3\2\2\2\u012d\u012e\3\2\2\2\u012e\u0132\3")
         buf.write("\2\2\2\u012f\u0131\5\36\20\2\u0130\u012f\3\2\2\2\u0131")
         buf.write("\u0134\3\2\2\2\u0132\u0130\3\2\2\2\u0132\u0133\3\2\2\2")
         buf.write("\u0133\u0135\3\2\2\2\u0134\u0132\3\2\2\2\u0135\u0136\7")
-        buf.write("T\2\2\u0136\u0137\7Z\2\2\u0137\u0138\5*\26\2\u0138\35")
-        buf.write("\3\2\2\2\u0139\u013a\7I\2\2\u013a\37\3\2\2\2\u013b\u013e")
+        buf.write("U\2\2\u0136\u0137\7[\2\2\u0137\u0138\5*\26\2\u0138\35")
+        buf.write("\3\2\2\2\u0139\u013a\7J\2\2\u013a\37\3\2\2\2\u013b\u013e")
         buf.write("\5\f\7\2\u013c\u013e\5\36\20\2\u013d\u013b\3\2\2\2\u013d")
         buf.write("\u013c\3\2\2\2\u013e!\3\2\2\2\u013f\u014b\5\n\6\2\u0140")
-        buf.write("\u0141\7P\2\2\u0141\u0146\5\16\b\2\u0142\u0143\7O\2\2")
+        buf.write("\u0141\7Q\2\2\u0141\u0146\5\16\b\2\u0142\u0143\7P\2\2")
         buf.write("\u0143\u0145\5\16\b\2\u0144\u0142\3\2\2\2\u0145\u0148")
         buf.write("\3\2\2\2\u0146\u0144\3\2\2\2\u0146\u0147\3\2\2\2\u0147")
-        buf.write("\u0149\3\2\2\2\u0148\u0146\3\2\2\2\u0149\u014a\7Q\2\2")
+        buf.write("\u0149\3\2\2\2\u0148\u0146\3\2\2\2\u0149\u014a\7R\2\2")
         buf.write("\u014a\u014c\3\2\2\2\u014b\u0140\3\2\2\2\u014b\u014c\3")
         buf.write("\2\2\2\u014c\u014e\3\2\2\2\u014d\u014f\5 \21\2\u014e\u014d")
         buf.write("\3\2\2\2\u014f\u0150\3\2\2\2\u0150\u014e\3\2\2\2\u0150")
@@ -192,19 +193,19 @@ def serializedATN():
         buf.write("\3\2\2\2\u015a\'\3\2\2\2\u015b\u0160\5\"\22\2\u015c\u0160")
         buf.write("\5$\23\2\u015d\u0160\5&\24\2\u015e\u0160\5\6\4\2\u015f")
         buf.write("\u015b\3\2\2\2\u015f\u015c\3\2\2\2\u015f\u015d\3\2\2\2")
-        buf.write("\u015f\u015e\3\2\2\2\u0160)\3\2\2\2\u0161\u0162\7Y\2\2")
-        buf.write("\u0162\u0163\5(\25\2\u0163\u0164\7Z\2\2\u0164\u0166\3")
+        buf.write("\u015f\u015e\3\2\2\2\u0160)\3\2\2\2\u0161\u0162\7Z\2\2")
+        buf.write("\u0162\u0163\5(\25\2\u0163\u0164\7[\2\2\u0164\u0166\3")
         buf.write("\2\2\2\u0165\u0161\3\2\2\2\u0166\u0169\3\2\2\2\u0167\u0165")
         buf.write("\3\2\2\2\u0167\u0168\3\2\2\2\u0168\u016a\3\2\2\2\u0169")
-        buf.write("\u0167\3\2\2\2\u016a\u016b\7Y\2\2\u016b\u016c\5(\25\2")
+        buf.write("\u0167\3\2\2\2\u016a\u016b\7Z\2\2\u016b\u016c\5(\25\2")
         buf.write("\u016c+\3\2\2\2\u016d\u016e\7\5\2\2\u016e\u0170\5\f\7")
         buf.write("\2\u016f\u0171\5.\30\2\u0170\u016f\3\2\2\2\u0170\u0171")
-        buf.write("\3\2\2\2\u0171-\3\2\2\2\u0172\u017a\7I\2\2\u0173\u0175")
-        buf.write("\7I\2\2\u0174\u0173\3\2\2\2\u0174\u0175\3\2\2\2\u0175")
-        buf.write("\u0176\3\2\2\2\u0176\u0177\7R\2\2\u0177\u0178\7K\2\2\u0178")
-        buf.write("\u017a\7S\2\2\u0179\u0172\3\2\2\2\u0179\u0174\3\2\2\2")
+        buf.write("\3\2\2\2\u0171-\3\2\2\2\u0172\u017a\7J\2\2\u0173\u0175")
+        buf.write("\7J\2\2\u0174\u0173\3\2\2\2\u0174\u0175\3\2\2\2\u0175")
+        buf.write("\u0176\3\2\2\2\u0176\u0177\7S\2\2\u0177\u0178\7L\2\2\u0178")
+        buf.write("\u017a\7T\2\2\u0179\u0172\3\2\2\2\u0179\u0174\3\2\2\2")
         buf.write("\u017a/\3\2\2\2\u017b\u017c\7\6\2\2\u017c\u017d\5\62\32")
-        buf.write("\2\u017d\61\3\2\2\2\u017e\u017f\7V\2\2\u017f\u0180\7I")
+        buf.write("\2\u017d\61\3\2\2\2\u017e\u017f\7W\2\2\u017f\u0180\7J")
         buf.write("\2\2\u0180\63\3\2\2\2\u0181\u0182\7\7\2\2\u0182\65\3\2")
         buf.write("\2\2\u0183\u0184\7\b\2\2\u0184\u0185\5\62\32\2\u0185\67")
         buf.write("\3\2\2\2\u0186\u0187\7\t\2\2\u0187\u0188\5\62\32\2\u0188")
@@ -213,21 +214,21 @@ def serializedATN():
         buf.write("\u0190\7\13\2\2\u018f\u0191\5\f\7\2\u0190\u018f\3\2\2")
         buf.write("\2\u0190\u0191\3\2\2\2\u0191=\3\2\2\2\u0192\u0193\7\f")
         buf.write("\2\2\u0193?\3\2\2\2\u0194\u0195\7\20\2\2\u0195\u0196\7")
-        buf.write("I\2\2\u0196\u019a\7I\2\2\u0197\u0198\7R\2\2\u0198\u0199")
-        buf.write("\7K\2\2\u0199\u019b\7S\2\2\u019a\u0197\3\2\2\2\u019a\u019b")
+        buf.write("J\2\2\u0196\u019a\7J\2\2\u0197\u0198\7S\2\2\u0198\u0199")
+        buf.write("\7L\2\2\u0199\u019b\7T\2\2\u019a\u0197\3\2\2\2\u019a\u019b")
         buf.write("\3\2\2\2\u019b\u01a4\3\2\2\2\u019c\u019d\7\21\2\2\u019d")
-        buf.write("\u01a1\7I\2\2\u019e\u01a0\5B\"\2\u019f\u019e\3\2\2\2\u01a0")
+        buf.write("\u01a1\7J\2\2\u019e\u01a0\5B\"\2\u019f\u019e\3\2\2\2\u01a0")
         buf.write("\u01a3\3\2\2\2\u01a1\u019f\3\2\2\2\u01a1\u01a2\3\2\2\2")
         buf.write("\u01a2\u01a5\3\2\2\2\u01a3\u01a1\3\2\2\2\u01a4\u019c\3")
         buf.write("\2\2\2\u01a4\u01a5\3\2\2\2\u01a5A\3\2\2\2\u01a6\u01a7")
-        buf.write("\7\22\2\2\u01a7\u01a8\7K\2\2\u01a8\u01a9\7I\2\2\u01a9")
+        buf.write("\7\22\2\2\u01a7\u01a8\7L\2\2\u01a8\u01a9\7J\2\2\u01a9")
         buf.write("C\3\2\2\2\u01aa\u01ab\t\4\2\2\u01ab\u01ac\5.\30\2\u01ac")
         buf.write("E\3\2\2\2\u01ad\u01b3\5H%\2\u01ae\u01b3\5J&\2\u01af\u01b3")
         buf.write("\5L\'\2\u01b0\u01b3\5N(\2\u01b1\u01b3\5P)\2\u01b2\u01ad")
         buf.write("\3\2\2\2\u01b2\u01ae\3\2\2\2\u01b2\u01af\3\2\2\2\u01b2")
         buf.write("\u01b0\3\2\2\2\u01b2\u01b1\3\2\2\2\u01b3G\3\2\2\2\u01b4")
         buf.write("\u01b5\t\5\2\2\u01b5\u01b8\5.\30\2\u01b6\u01b9\5.\30\2")
-        buf.write("\u01b7\u01b9\7K\2\2\u01b8\u01b6\3\2\2\2\u01b8\u01b7\3")
+        buf.write("\u01b7\u01b9\7L\2\2\u01b8\u01b6\3\2\2\2\u01b8\u01b7\3")
         buf.write("\2\2\2\u01b9I\3\2\2\2\u01ba\u01bb\t\6\2\2\u01bb\u01be")
         buf.write("\5.\30\2\u01bc\u01bf\5.\30\2\u01bd\u01bf\5f\64\2\u01be")
         buf.write("\u01bc\3\2\2\2\u01be\u01bd\3\2\2\2\u01bfK\3\2\2\2\u01c0")
@@ -237,24 +238,24 @@ def serializedATN():
         buf.write(".\30\2\u01c8\u01c9\5.\30\2\u01c9O\3\2\2\2\u01ca\u01cb")
         buf.write("\7$\2\2\u01cb\u01cc\5.\30\2\u01cc\u01cd\5.\30\2\u01cd")
         buf.write("Q\3\2\2\2\u01ce\u01cf\7*\2\2\u01cf\u01d0\5.\30\2\u01d0")
-        buf.write("\u01d1\7I\2\2\u01d1\u01d2\5.\30\2\u01d2S\3\2\2\2\u01d3")
-        buf.write("\u01d4\7+\2\2\u01d4\u01d5\7I\2\2\u01d5\u01d8\5.\30\2\u01d6")
+        buf.write("\u01d1\7J\2\2\u01d1\u01d2\5.\30\2\u01d2S\3\2\2\2\u01d3")
+        buf.write("\u01d4\7+\2\2\u01d4\u01d5\7J\2\2\u01d5\u01d8\5.\30\2\u01d6")
         buf.write("\u01d9\5.\30\2\u01d7\u01d9\5f\64\2\u01d8\u01d6\3\2\2\2")
         buf.write("\u01d8\u01d7\3\2\2\2\u01d9U\3\2\2\2\u01da\u01db\t\7\2")
         buf.write("\2\u01db\u01dc\5.\30\2\u01dc\u01df\5.\30\2\u01dd\u01e0")
         buf.write("\5.\30\2\u01de\u01e0\5f\64\2\u01df\u01dd\3\2\2\2\u01df")
         buf.write("\u01de\3\2\2\2\u01e0W\3\2\2\2\u01e1\u01e2\7\r\2\2\u01e2")
-        buf.write("Y\3\2\2\2\u01e3\u01e4\7\16\2\2\u01e4\u01e5\7M\2\2\u01e5")
-        buf.write("[\3\2\2\2\u01e6\u01e7\7\17\2\2\u01e7\u01eb\7I\2\2\u01e8")
+        buf.write("Y\3\2\2\2\u01e3\u01e4\7\16\2\2\u01e4\u01e5\7N\2\2\u01e5")
+        buf.write("[\3\2\2\2\u01e6\u01e7\7\17\2\2\u01e7\u01eb\7J\2\2\u01e8")
         buf.write("\u01ea\5^\60\2\u01e9\u01e8\3\2\2\2\u01ea\u01ed\3\2\2\2")
         buf.write("\u01eb\u01e9\3\2\2\2\u01eb\u01ec\3\2\2\2\u01ec\u01ef\3")
-        buf.write("\2\2\2\u01ed\u01eb\3\2\2\2\u01ee\u01f0\7M\2\2\u01ef\u01ee")
+        buf.write("\2\2\2\u01ed\u01eb\3\2\2\2\u01ee\u01f0\7N\2\2\u01ef\u01ee")
         buf.write("\3\2\2\2\u01ef\u01f0\3\2\2\2\u01f0]\3\2\2\2\u01f1\u01f2")
         buf.write("\t\b\2\2\u01f2_\3\2\2\2\u01f3\u01f4\b\61\1\2\u01f4\u01f5")
-        buf.write("\7P\2\2\u01f5\u01f6\5`\61\2\u01f6\u01f7\7Q\2\2\u01f7\u0204")
+        buf.write("\7Q\2\2\u01f5\u01f6\5`\61\2\u01f6\u01f7\7R\2\2\u01f7\u0204")
         buf.write("\3\2\2\2\u01f8\u01f9\5d\63\2\u01f9\u01fa\5`\61\n\u01fa")
-        buf.write("\u0204\3\2\2\2\u01fb\u01fc\5b\62\2\u01fc\u01fd\7P\2\2")
-        buf.write("\u01fd\u01fe\5`\61\2\u01fe\u01ff\7Q\2\2\u01ff\u0204\3")
+        buf.write("\u0204\3\2\2\2\u01fb\u01fc\5b\62\2\u01fc\u01fd\7Q\2\2")
+        buf.write("\u01fd\u01fe\5`\61\2\u01fe\u01ff\7R\2\2\u01ff\u0204\3")
         buf.write("\2\2\2\u0200\u0204\5f\64\2\u0201\u0204\5\24\13\2\u0202")
         buf.write("\u0204\5.\30\2\u0203\u01f3\3\2\2\2\u0203\u01f8\3\2\2\2")
         buf.write("\u0203\u01fb\3\2\2\2\u0203\u0200\3\2\2\2\u0203\u0201\3")
@@ -272,83 +273,87 @@ def serializedATN():
         buf.write(",\2\2\u021e\u021a\3\2\2\2\u021e\u021b\3\2\2\2\u021e\u021c")
         buf.write("\3\2\2\2\u021e\u021d\3\2\2\2\u021fg\3\2\2\2\u0220\u0221")
         buf.write("\5j\66\2\u0221\u0222\7-\2\2\u0222i\3\2\2\2\u0223\u0224")
-        buf.write("\t\f\2\2\u0224k\3\2\2\2\u0225\u0226\78\2\2\u0226\u022d")
-        buf.write("\5\u0094K\2\u0227\u0229\7T\2\2\u0228\u022a\5n8\2\u0229")
+        buf.write("\t\f\2\2\u0224k\3\2\2\2\u0225\u0226\7:\2\2\u0226\u022d")
+        buf.write("\5\u0094K\2\u0227\u0229\7U\2\2\u0228\u022a\5n8\2\u0229")
         buf.write("\u0228\3\2\2\2\u022a\u022b\3\2\2\2\u022b\u0229\3\2\2\2")
         buf.write("\u022b\u022c\3\2\2\2\u022c\u022e\3\2\2\2\u022d\u0227\3")
         buf.write("\2\2\2\u022d\u022e\3\2\2\2\u022em\3\2\2\2\u022f\u0230")
-        buf.write("\7Y\2\2\u0230\u0231\5p9\2\u0231\u0232\7T\2\2\u0232\u0233")
+        buf.write("\7Z\2\2\u0230\u0231\5p9\2\u0231\u0232\7U\2\2\u0232\u0233")
         buf.write("\5`\61\2\u0233o\3\2\2\2\u0234\u0235\t\r\2\2\u0235q\3\2")
         buf.write("\2\2\u0236\u0237\7;\2\2\u0237\u0243\5\n\6\2\u0238\u0239")
-        buf.write("\7P\2\2\u0239\u023e\5\16\b\2\u023a\u023b\7O\2\2\u023b")
+        buf.write("\7Q\2\2\u0239\u023e\5\16\b\2\u023a\u023b\7P\2\2\u023b")
         buf.write("\u023d\5\16\b\2\u023c\u023a\3\2\2\2\u023d\u0240\3\2\2")
         buf.write("\2\u023e\u023c\3\2\2\2\u023e\u023f\3\2\2\2\u023f\u0241")
-        buf.write("\3\2\2\2\u0240\u023e\3\2\2\2\u0241\u0242\7Q\2\2\u0242")
+        buf.write("\3\2\2\2\u0240\u023e\3\2\2\2\u0241\u0242\7R\2\2\u0242")
         buf.write("\u0244\3\2\2\2\u0243\u0238\3\2\2\2\u0243\u0244\3\2\2\2")
         buf.write("\u0244\u0245\3\2\2\2\u0245\u0246\5j\66\2\u0246\u0247\7")
-        buf.write("T\2\2\u0247\u0248\7Z\2\2\u0248\u0249\5\30\r\2\u0249s\3")
-        buf.write("\2\2\2\u024a\u024b\7D\2\2\u024b\u0257\5\n\6\2\u024c\u024d")
-        buf.write("\7P\2\2\u024d\u0252\5\16\b\2\u024e\u024f\7O\2\2\u024f")
+        buf.write("U\2\2\u0247\u0248\7[\2\2\u0248\u0249\5\30\r\2\u0249s\3")
+        buf.write("\2\2\2\u024a\u024b\79\2\2\u024b\u0257\5\n\6\2\u024c\u024d")
+        buf.write("\7Q\2\2\u024d\u0252\5\16\b\2\u024e\u024f\7P\2\2\u024f")
         buf.write("\u0251\5\16\b\2\u0250\u024e\3\2\2\2\u0251\u0254\3\2\2")
         buf.write("\2\u0252\u0250\3\2\2\2\u0252\u0253\3\2\2\2\u0253\u0255")
-        buf.write("\3\2\2\2\u0254\u0252\3\2\2\2\u0255\u0256\7Q\2\2\u0256")
+        buf.write("\3\2\2\2\u0254\u0252\3\2\2\2\u0255\u0256\7R\2\2\u0256")
         buf.write("\u0258\3\2\2\2\u0257\u024c\3\2\2\2\u0257\u0258\3\2\2\2")
         buf.write("\u0258\u025a\3\2\2\2\u0259\u025b\5\u008cG\2\u025a\u0259")
         buf.write("\3\2\2\2\u025b\u025c\3\2\2\2\u025c\u025a\3\2\2\2\u025c")
-        buf.write("\u025d\3\2\2\2\u025d\u025e\3\2\2\2\u025e\u0264\7T\2\2")
-        buf.write("\u025f\u0260\7Z\2\2\u0260\u0261\7Y\2\2\u0261\u0263\5\6")
+        buf.write("\u025d\3\2\2\2\u025d\u025e\3\2\2\2\u025e\u0264\7U\2\2")
+        buf.write("\u025f\u0260\7[\2\2\u0260\u0261\7Z\2\2\u0261\u0263\5\6")
         buf.write("\4\2\u0262\u025f\3\2\2\2\u0263\u0266\3\2\2\2\u0264\u0262")
         buf.write("\3\2\2\2\u0264\u0265\3\2\2\2\u0265u\3\2\2\2\u0266\u0264")
-        buf.write("\3\2\2\2\u0267\u0268\7D\2\2\u0268\u0269\7\5\2\2\u0269")
+        buf.write("\3\2\2\2\u0267\u0268\79\2\2\u0268\u0269\7\5\2\2\u0269")
         buf.write("\u026b\5\u008cG\2\u026a\u026c\5\n\6\2\u026b\u026a\3\2")
         buf.write("\2\2\u026b\u026c\3\2\2\2\u026c\u026d\3\2\2\2\u026d\u0273")
-        buf.write("\7T\2\2\u026e\u026f\7Z\2\2\u026f\u0270\7Y\2\2\u0270\u0272")
+        buf.write("\7U\2\2\u026e\u026f\7[\2\2\u026f\u0270\7Z\2\2\u0270\u0272")
         buf.write("\5\6\4\2\u0271\u026e\3\2\2\2\u0272\u0275\3\2\2\2\u0273")
         buf.write("\u0271\3\2\2\2\u0273\u0274\3\2\2\2\u0274w\3\2\2\2\u0275")
-        buf.write("\u0273\3\2\2\2\u0276\u0277\7<\2\2\u0277\u0278\5\u0094")
-        buf.write("K\2\u0278\u0279\5\u0090I\2\u0279y\3\2\2\2\u027a\u027b")
-        buf.write("\7B\2\2\u027b\u027c\5\u0094K\2\u027c\u027d\5\u0090I\2")
-        buf.write("\u027d\u027e\5.\30\2\u027e{\3\2\2\2\u027f\u0280\7C\2\2")
-        buf.write("\u0280\u0281\5\u0094K\2\u0281\u0282\5`\61\2\u0282\u0283")
-        buf.write("\5.\30\2\u0283}\3\2\2\2\u0284\u0285\7=\2\2\u0285\u0286")
-        buf.write("\5\u0094K\2\u0286\u0287\5`\61\2\u0287\177\3\2\2\2\u0288")
-        buf.write("\u0289\7>\2\2\u0289\u028a\5\u0094K\2\u028a\u028b\5`\61")
-        buf.write("\2\u028b\u0081\3\2\2\2\u028c\u028d\7?\2\2\u028d\u028e")
-        buf.write("\5\u0094K\2\u028e\u028f\5`\61\2\u028f\u0083\3\2\2\2\u0290")
-        buf.write("\u0291\7@\2\2\u0291\u0293\5\u0094K\2\u0292\u0294\5\f\7")
-        buf.write("\2\u0293\u0292\3\2\2\2\u0294\u0295\3\2\2\2\u0295\u0293")
-        buf.write("\3\2\2\2\u0295\u0296\3\2\2\2\u0296\u0297\3\2\2\2\u0297")
-        buf.write("\u0298\5\u0094K\2\u0298\u0085\3\2\2\2\u0299\u029a\7A\2")
-        buf.write("\2\u029a\u029b\5\u0094K\2\u029b\u029c\5`\61\2\u029c\u0087")
-        buf.write("\3\2\2\2\u029d\u029f\7E\2\2\u029e\u02a0\5\u008cG\2\u029f")
-        buf.write("\u029e\3\2\2\2\u02a0\u02a1\3\2\2\2\u02a1\u029f\3\2\2\2")
-        buf.write("\u02a1\u02a2\3\2\2\2\u02a2\u02a6\3\2\2\2\u02a3\u02a5\7")
-        buf.write("M\2\2\u02a4\u02a3\3\2\2\2\u02a5\u02a8\3\2\2\2\u02a6\u02a4")
-        buf.write("\3\2\2\2\u02a6\u02a7\3\2\2\2\u02a7\u02a9\3\2\2\2\u02a8")
-        buf.write("\u02a6\3\2\2\2\u02a9\u02aa\5`\61\2\u02aa\u0089\3\2\2\2")
-        buf.write("\u02ab\u02ad\7F\2\2\u02ac\u02ae\5\u008cG\2\u02ad\u02ac")
-        buf.write("\3\2\2\2\u02ae\u02af\3\2\2\2\u02af\u02ad\3\2\2\2\u02af")
-        buf.write("\u02b0\3\2\2\2\u02b0\u008b\3\2\2\2\u02b1\u02b4\5\f\7\2")
-        buf.write("\u02b2\u02b4\5\36\20\2\u02b3\u02b1\3\2\2\2\u02b3\u02b2")
-        buf.write("\3\2\2\2\u02b4\u008d\3\2\2\2\u02b5\u02b6\5\u0092J\2\u02b6")
-        buf.write("\u02b7\5`\61\2\u02b7\u008f\3\2\2\2\u02b8\u02c4\5\n\6\2")
-        buf.write("\u02b9\u02ba\7P\2\2\u02ba\u02bf\5\u008eH\2\u02bb\u02bc")
-        buf.write("\7O\2\2\u02bc\u02be\5\u008eH\2\u02bd\u02bb\3\2\2\2\u02be")
-        buf.write("\u02c1\3\2\2\2\u02bf\u02bd\3\2\2\2\u02bf\u02c0\3\2\2\2")
-        buf.write("\u02c0\u02c2\3\2\2\2\u02c1\u02bf\3\2\2\2\u02c2\u02c3\7")
-        buf.write("Q\2\2\u02c3\u02c5\3\2\2\2\u02c4\u02b9\3\2\2\2\u02c4\u02c5")
-        buf.write("\3\2\2\2\u02c5\u0091\3\2\2\2\u02c6\u02c7\7J\2\2\u02c7")
-        buf.write("\u0093\3\2\2\2\u02c8\u02ca\5\u008cG\2\u02c9\u02c8\3\2")
-        buf.write("\2\2\u02ca\u02cb\3\2\2\2\u02cb\u02c9\3\2\2\2\u02cb\u02cc")
-        buf.write("\3\2\2\2\u02cc\u02cd\3\2\2\2\u02cd\u02ce\7M\2\2\u02ce")
-        buf.write("\u0095\3\2\2\2A\u0097\u009c\u00a1\u00a7\u00b2\u00d0\u00d5")
-        buf.write("\u00df\u00e4\u00e9\u00fb\u0102\u0112\u011d\u0128\u012d")
-        buf.write("\u0132\u013d\u0146\u014b\u0150\u0155\u0159\u015f\u0167")
-        buf.write("\u0170\u0174\u0179\u0190\u019a\u01a1\u01a4\u01b2\u01b8")
-        buf.write("\u01be\u01c4\u01d8\u01df\u01eb\u01ef\u0203\u020e\u0210")
-        buf.write("\u0218\u021e\u022b\u022d\u023e\u0243\u0252\u0257\u025c")
-        buf.write("\u0264\u026b\u0273\u0295\u02a1\u02a6\u02af\u02b3\u02bf")
-        buf.write("\u02c4\u02cb")
+        buf.write("\u0273\3\2\2\2\u0276\u0278\7?\2\2\u0277\u0276\3\2\2\2")
+        buf.write("\u0277\u0278\3\2\2\2\u0278\u0279\3\2\2\2\u0279\u027a\7")
+        buf.write("@\2\2\u027a\u027b\5\u0094K\2\u027b\u027c\5\u0090I\2\u027c")
+        buf.write("y\3\2\2\2\u027d\u027f\7?\2\2\u027e\u027d\3\2\2\2\u027e")
+        buf.write("\u027f\3\2\2\2\u027f\u0280\3\2\2\2\u0280\u0281\78\2\2")
+        buf.write("\u0281\u0282\5\u0094K\2\u0282\u0283\5\u0090I\2\u0283\u0284")
+        buf.write("\5.\30\2\u0284{\3\2\2\2\u0285\u0287\7?\2\2\u0286\u0285")
+        buf.write("\3\2\2\2\u0286\u0287\3\2\2\2\u0287\u0288\3\2\2\2\u0288")
+        buf.write("\u0289\7G\2\2\u0289\u028a\5\u0094K\2\u028a\u028b\5`\61")
+        buf.write("\2\u028b\u028c\5.\30\2\u028c}\3\2\2\2\u028d\u028e\7B\2")
+        buf.write("\2\u028e\u028f\5\u0094K\2\u028f\u0290\5`\61\2\u0290\177")
+        buf.write("\3\2\2\2\u0291\u0292\7C\2\2\u0292\u0293\5\u0094K\2\u0293")
+        buf.write("\u0294\5`\61\2\u0294\u0081\3\2\2\2\u0295\u0296\7E\2\2")
+        buf.write("\u0296\u0297\5\u0094K\2\u0297\u0298\5`\61\2\u0298\u0083")
+        buf.write("\3\2\2\2\u0299\u029a\7F\2\2\u029a\u029c\5\u0094K\2\u029b")
+        buf.write("\u029d\5\f\7\2\u029c\u029b\3\2\2\2\u029d\u029e\3\2\2\2")
+        buf.write("\u029e\u029c\3\2\2\2\u029e\u029f\3\2\2\2\u029f\u02a0\3")
+        buf.write("\2\2\2\u02a0\u02a1\5\u0094K\2\u02a1\u0085\3\2\2\2\u02a2")
+        buf.write("\u02a3\7D\2\2\u02a3\u02a4\5\u0094K\2\u02a4\u02a5\5`\61")
+        buf.write("\2\u02a5\u0087\3\2\2\2\u02a6\u02a8\7<\2\2\u02a7\u02a9")
+        buf.write("\5\u008cG\2\u02a8\u02a7\3\2\2\2\u02a9\u02aa\3\2\2\2\u02aa")
+        buf.write("\u02a8\3\2\2\2\u02aa\u02ab\3\2\2\2\u02ab\u02af\3\2\2\2")
+        buf.write("\u02ac\u02ae\7N\2\2\u02ad\u02ac\3\2\2\2\u02ae\u02b1\3")
+        buf.write("\2\2\2\u02af\u02ad\3\2\2\2\u02af\u02b0\3\2\2\2\u02b0\u02b2")
+        buf.write("\3\2\2\2\u02b1\u02af\3\2\2\2\u02b2\u02b3\5`\61\2\u02b3")
+        buf.write("\u0089\3\2\2\2\u02b4\u02b6\7=\2\2\u02b5\u02b7\5\u008c")
+        buf.write("G\2\u02b6\u02b5\3\2\2\2\u02b7\u02b8\3\2\2\2\u02b8\u02b6")
+        buf.write("\3\2\2\2\u02b8\u02b9\3\2\2\2\u02b9\u008b\3\2\2\2\u02ba")
+        buf.write("\u02bd\5\f\7\2\u02bb\u02bd\5\36\20\2\u02bc\u02ba\3\2\2")
+        buf.write("\2\u02bc\u02bb\3\2\2\2\u02bd\u008d\3\2\2\2\u02be\u02bf")
+        buf.write("\5\u0092J\2\u02bf\u02c0\5`\61\2\u02c0\u008f\3\2\2\2\u02c1")
+        buf.write("\u02cd\5\n\6\2\u02c2\u02c3\7Q\2\2\u02c3\u02c8\5\u008e")
+        buf.write("H\2\u02c4\u02c5\7P\2\2\u02c5\u02c7\5\u008eH\2\u02c6\u02c4")
+        buf.write("\3\2\2\2\u02c7\u02ca\3\2\2\2\u02c8\u02c6\3\2\2\2\u02c8")
+        buf.write("\u02c9\3\2\2\2\u02c9\u02cb\3\2\2\2\u02ca\u02c8\3\2\2\2")
+        buf.write("\u02cb\u02cc\7R\2\2\u02cc\u02ce\3\2\2\2\u02cd\u02c2\3")
+        buf.write("\2\2\2\u02cd\u02ce\3\2\2\2\u02ce\u0091\3\2\2\2\u02cf\u02d0")
+        buf.write("\7K\2\2\u02d0\u0093\3\2\2\2\u02d1\u02d3\5\u008cG\2\u02d2")
+        buf.write("\u02d1\3\2\2\2\u02d3\u02d4\3\2\2\2\u02d4\u02d2\3\2\2\2")
+        buf.write("\u02d4\u02d5\3\2\2\2\u02d5\u02d6\3\2\2\2\u02d6\u02d7\7")
+        buf.write("N\2\2\u02d7\u0095\3\2\2\2D\u0097\u009c\u00a1\u00a7\u00b2")
+        buf.write("\u00d0\u00d5\u00df\u00e4\u00e9\u00fb\u0102\u0112\u011d")
+        buf.write("\u0128\u012d\u0132\u013d\u0146\u014b\u0150\u0155\u0159")
+        buf.write("\u015f\u0167\u0170\u0174\u0179\u0190\u019a\u01a1\u01a4")
+        buf.write("\u01b2\u01b8\u01be\u01c4\u01d8\u01df\u01eb\u01ef\u0203")
+        buf.write("\u020e\u0210\u0218\u021e\u022b\u022d\u023e\u0243\u0252")
+        buf.write("\u0257\u025c\u0264\u026b\u0273\u0277\u027e\u0286\u029e")
+        buf.write("\u02aa\u02af\u02b8\u02bc\u02c8\u02cd\u02d4")
         return buf.getvalue()
 
 
@@ -371,15 +376,15 @@ class QuilParser ( Parser ):
                      "'MUL'", "'DIV'", "'MOVE'", "'EXCHANGE'", "'CONVERT'", 
                      "'EQ'", "'GT'", "'GE'", "'LT'", "'LE'", "'LOAD'", "'STORE'", 
                      "'pi'", "'i'", "'SIN'", "'COS'", "'SQRT'", "'EXP'", 
-                     "'CIS'", "'+'", "'-'", "'*'", "'/'", "'^'", "'DEFFRAME'", 
-                     "'SAMPLE-RATE'", "'INITIAL-FREQUENCY'", "'DEFWAVEFORM'", 
-                     "'PULSE'", "'SET-FREQUENCY'", "'SET-PHASE'", "'SHIFT-PHASE'", 
-                     "'SWAP-PHASES'", "'SET-SCALE'", "'CAPTURE'", "'RAW-CAPTURE'", 
-                     "'DEFCAL'", "'DELAY'", "'FENCE'", "'CONTROLLED'", "'DAGGER'", 
-                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "<INVALID>", "'.'", "','", "'('", "')'", "'['", "']'", 
-                     "':'", "'%'", "'@'", "'\"'", "'_'", "'    '", "<INVALID>", 
-                     "<INVALID>", "' '" ]
+                     "'CIS'", "'+'", "'-'", "'*'", "'/'", "'^'", "'CAPTURE'", 
+                     "'DEFCAL'", "'DEFFRAME'", "'DEFWAVEFORM'", "'DELAY'", 
+                     "'FENCE'", "'INITIAL-FREQUENCY'", "'NONBLOCKING'", 
+                     "'PULSE'", "'SAMPLE-RATE'", "'SET-FREQUENCY'", "'SET-PHASE'", 
+                     "'SET-SCALE'", "'SHIFT-PHASE'", "'SWAP-PHASES'", "'RAW-CAPTURE'", 
+                     "'CONTROLLED'", "'DAGGER'", "<INVALID>", "<INVALID>", 
+                     "<INVALID>", "<INVALID>", "<INVALID>", "'.'", "','", 
+                     "'('", "')'", "'['", "']'", "':'", "'%'", "'@'", "'\"'", 
+                     "'_'", "'    '", "<INVALID>", "<INVALID>", "' '" ]
 
     symbolicNames = [ "<INVALID>", "DEFGATE", "DEFCIRCUIT", "MEASURE", "LABEL", 
                       "HALT", "JUMP", "JUMPWHEN", "JUMPUNLESS", "RESET", 
@@ -389,15 +394,15 @@ class QuilParser ( Parser ):
                       "SUB", "MUL", "DIV", "MOVE", "EXCHANGE", "CONVERT", 
                       "EQ", "GT", "GE", "LT", "LE", "LOAD", "STORE", "PI", 
                       "I", "SIN", "COS", "SQRT", "EXP", "CIS", "PLUS", "MINUS", 
-                      "TIMES", "DIVIDE", "POWER", "DEFFRAME", "SAMPLERATE", 
-                      "INITIALFREQUENCY", "DEFWAVEFORM", "PULSE", "SETFREQUENCY", 
-                      "SETPHASE", "SHIFTPHASE", "SWAPPHASES", "SETSCALE", 
-                      "CAPTURE", "RAWCAPTURE", "DEFCAL", "DELAY", "FENCE", 
-                      "CONTROLLED", "DAGGER", "IDENTIFIER", "COLONTERMIDENT", 
-                      "INT", "FLOAT", "STRING", "PERIOD", "COMMA", "LPAREN", 
-                      "RPAREN", "LBRACKET", "RBRACKET", "COLON", "PERCENTAGE", 
-                      "AT", "QUOTE", "UNDERSCORE", "TAB", "NEWLINE", "COMMENT", 
-                      "SPACE", "INVALID" ]
+                      "TIMES", "DIVIDE", "POWER", "CAPTURE", "DEFCAL", "DEFFRAME", 
+                      "DEFWAVEFORM", "DELAY", "FENCE", "INITIALFREQUENCY", 
+                      "NONBLOCKING", "PULSE", "SAMPLERATE", "SETFREQUENCY", 
+                      "SETPHASE", "SETSCALE", "SHIFTPHASE", "SWAPPHASES", 
+                      "RAWCAPTURE", "CONTROLLED", "DAGGER", "IDENTIFIER", 
+                      "COLONTERMIDENT", "INT", "FLOAT", "STRING", "PERIOD", 
+                      "COMMA", "LPAREN", "RPAREN", "LBRACKET", "RBRACKET", 
+                      "COLON", "PERCENTAGE", "AT", "QUOTE", "UNDERSCORE", 
+                      "TAB", "NEWLINE", "COMMENT", "SPACE", "INVALID" ]
 
     RULE_quil = 0
     RULE_allInstr = 1
@@ -545,44 +550,45 @@ class QuilParser ( Parser ):
     TIMES=51
     DIVIDE=52
     POWER=53
-    DEFFRAME=54
-    SAMPLERATE=55
-    INITIALFREQUENCY=56
+    CAPTURE=54
+    DEFCAL=55
+    DEFFRAME=56
     DEFWAVEFORM=57
-    PULSE=58
-    SETFREQUENCY=59
-    SETPHASE=60
-    SHIFTPHASE=61
-    SWAPPHASES=62
-    SETSCALE=63
-    CAPTURE=64
-    RAWCAPTURE=65
-    DEFCAL=66
-    DELAY=67
-    FENCE=68
-    CONTROLLED=69
-    DAGGER=70
-    IDENTIFIER=71
-    COLONTERMIDENT=72
-    INT=73
-    FLOAT=74
-    STRING=75
-    PERIOD=76
-    COMMA=77
-    LPAREN=78
-    RPAREN=79
-    LBRACKET=80
-    RBRACKET=81
-    COLON=82
-    PERCENTAGE=83
-    AT=84
-    QUOTE=85
-    UNDERSCORE=86
-    TAB=87
-    NEWLINE=88
-    COMMENT=89
-    SPACE=90
-    INVALID=91
+    DELAY=58
+    FENCE=59
+    INITIALFREQUENCY=60
+    NONBLOCKING=61
+    PULSE=62
+    SAMPLERATE=63
+    SETFREQUENCY=64
+    SETPHASE=65
+    SETSCALE=66
+    SHIFTPHASE=67
+    SWAPPHASES=68
+    RAWCAPTURE=69
+    CONTROLLED=70
+    DAGGER=71
+    IDENTIFIER=72
+    COLONTERMIDENT=73
+    INT=74
+    FLOAT=75
+    STRING=76
+    PERIOD=77
+    COMMA=78
+    LPAREN=79
+    RPAREN=80
+    LBRACKET=81
+    RBRACKET=82
+    COLON=83
+    PERCENTAGE=84
+    AT=85
+    QUOTE=86
+    UNDERSCORE=87
+    TAB=88
+    NEWLINE=89
+    COMMENT=90
+    SPACE=91
+    INVALID=92
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -639,7 +645,7 @@ class QuilParser ( Parser ):
             self.state = 149
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << QuilParser.DEFGATE) | (1 << QuilParser.DEFCIRCUIT) | (1 << QuilParser.MEASURE) | (1 << QuilParser.LABEL) | (1 << QuilParser.HALT) | (1 << QuilParser.JUMP) | (1 << QuilParser.JUMPWHEN) | (1 << QuilParser.JUMPUNLESS) | (1 << QuilParser.RESET) | (1 << QuilParser.WAIT) | (1 << QuilParser.NOP) | (1 << QuilParser.INCLUDE) | (1 << QuilParser.PRAGMA) | (1 << QuilParser.DECLARE) | (1 << QuilParser.NEG) | (1 << QuilParser.NOT) | (1 << QuilParser.TRUE) | (1 << QuilParser.FALSE) | (1 << QuilParser.AND) | (1 << QuilParser.IOR) | (1 << QuilParser.XOR) | (1 << QuilParser.OR) | (1 << QuilParser.ADD) | (1 << QuilParser.SUB) | (1 << QuilParser.MUL) | (1 << QuilParser.DIV) | (1 << QuilParser.MOVE) | (1 << QuilParser.EXCHANGE) | (1 << QuilParser.CONVERT) | (1 << QuilParser.EQ) | (1 << QuilParser.GT) | (1 << QuilParser.GE) | (1 << QuilParser.LT) | (1 << QuilParser.LE) | (1 << QuilParser.LOAD) | (1 << QuilParser.STORE) | (1 << QuilParser.DEFWAVEFORM) | (1 << QuilParser.PULSE) | (1 << QuilParser.SETFREQUENCY) | (1 << QuilParser.SETPHASE) | (1 << QuilParser.SHIFTPHASE) | (1 << QuilParser.SWAPPHASES) | (1 << QuilParser.SETSCALE))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (QuilParser.CAPTURE - 64)) | (1 << (QuilParser.RAWCAPTURE - 64)) | (1 << (QuilParser.DEFCAL - 64)) | (1 << (QuilParser.DELAY - 64)) | (1 << (QuilParser.FENCE - 64)) | (1 << (QuilParser.CONTROLLED - 64)) | (1 << (QuilParser.DAGGER - 64)) | (1 << (QuilParser.IDENTIFIER - 64)))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << QuilParser.DEFGATE) | (1 << QuilParser.DEFCIRCUIT) | (1 << QuilParser.MEASURE) | (1 << QuilParser.LABEL) | (1 << QuilParser.HALT) | (1 << QuilParser.JUMP) | (1 << QuilParser.JUMPWHEN) | (1 << QuilParser.JUMPUNLESS) | (1 << QuilParser.RESET) | (1 << QuilParser.WAIT) | (1 << QuilParser.NOP) | (1 << QuilParser.INCLUDE) | (1 << QuilParser.PRAGMA) | (1 << QuilParser.DECLARE) | (1 << QuilParser.NEG) | (1 << QuilParser.NOT) | (1 << QuilParser.TRUE) | (1 << QuilParser.FALSE) | (1 << QuilParser.AND) | (1 << QuilParser.IOR) | (1 << QuilParser.XOR) | (1 << QuilParser.OR) | (1 << QuilParser.ADD) | (1 << QuilParser.SUB) | (1 << QuilParser.MUL) | (1 << QuilParser.DIV) | (1 << QuilParser.MOVE) | (1 << QuilParser.EXCHANGE) | (1 << QuilParser.CONVERT) | (1 << QuilParser.EQ) | (1 << QuilParser.GT) | (1 << QuilParser.GE) | (1 << QuilParser.LT) | (1 << QuilParser.LE) | (1 << QuilParser.LOAD) | (1 << QuilParser.STORE) | (1 << QuilParser.CAPTURE) | (1 << QuilParser.DEFCAL) | (1 << QuilParser.DEFWAVEFORM) | (1 << QuilParser.DELAY) | (1 << QuilParser.FENCE) | (1 << QuilParser.NONBLOCKING) | (1 << QuilParser.PULSE))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (QuilParser.SETFREQUENCY - 64)) | (1 << (QuilParser.SETPHASE - 64)) | (1 << (QuilParser.SETSCALE - 64)) | (1 << (QuilParser.SHIFTPHASE - 64)) | (1 << (QuilParser.SWAPPHASES - 64)) | (1 << (QuilParser.RAWCAPTURE - 64)) | (1 << (QuilParser.CONTROLLED - 64)) | (1 << (QuilParser.DAGGER - 64)) | (1 << (QuilParser.IDENTIFIER - 64)))) != 0):
                 self.state = 148
                 self.allInstr()
 
@@ -925,149 +931,175 @@ class QuilParser ( Parser ):
         try:
             self.state = 206
             self._errHandler.sync(self)
-            token = self._input.LA(1)
-            if token in [QuilParser.FENCE]:
+            la_ = self._interp.adaptivePredict(self._input,5,self._ctx)
+            if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 178
                 self.fence()
                 pass
-            elif token in [QuilParser.DELAY]:
+
+            elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 179
                 self.delay()
                 pass
-            elif token in [QuilParser.CONTROLLED, QuilParser.DAGGER, QuilParser.IDENTIFIER]:
+
+            elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 180
                 self.gate()
                 pass
-            elif token in [QuilParser.MEASURE]:
+
+            elif la_ == 4:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 181
                 self.measure()
                 pass
-            elif token in [QuilParser.LABEL]:
+
+            elif la_ == 5:
                 self.enterOuterAlt(localctx, 5)
                 self.state = 182
                 self.defLabel()
                 pass
-            elif token in [QuilParser.HALT]:
+
+            elif la_ == 6:
                 self.enterOuterAlt(localctx, 6)
                 self.state = 183
                 self.halt()
                 pass
-            elif token in [QuilParser.JUMP]:
+
+            elif la_ == 7:
                 self.enterOuterAlt(localctx, 7)
                 self.state = 184
                 self.jump()
                 pass
-            elif token in [QuilParser.JUMPWHEN]:
+
+            elif la_ == 8:
                 self.enterOuterAlt(localctx, 8)
                 self.state = 185
                 self.jumpWhen()
                 pass
-            elif token in [QuilParser.JUMPUNLESS]:
+
+            elif la_ == 9:
                 self.enterOuterAlt(localctx, 9)
                 self.state = 186
                 self.jumpUnless()
                 pass
-            elif token in [QuilParser.RESET]:
+
+            elif la_ == 10:
                 self.enterOuterAlt(localctx, 10)
                 self.state = 187
                 self.resetState()
                 pass
-            elif token in [QuilParser.WAIT]:
+
+            elif la_ == 11:
                 self.enterOuterAlt(localctx, 11)
                 self.state = 188
                 self.wait()
                 pass
-            elif token in [QuilParser.NEG, QuilParser.NOT, QuilParser.TRUE, QuilParser.FALSE]:
+
+            elif la_ == 12:
                 self.enterOuterAlt(localctx, 12)
                 self.state = 189
                 self.classicalUnary()
                 pass
-            elif token in [QuilParser.AND, QuilParser.IOR, QuilParser.XOR, QuilParser.OR, QuilParser.ADD, QuilParser.SUB, QuilParser.MUL, QuilParser.DIV, QuilParser.MOVE, QuilParser.EXCHANGE, QuilParser.CONVERT]:
+
+            elif la_ == 13:
                 self.enterOuterAlt(localctx, 13)
                 self.state = 190
                 self.classicalBinary()
                 pass
-            elif token in [QuilParser.EQ, QuilParser.GT, QuilParser.GE, QuilParser.LT, QuilParser.LE]:
+
+            elif la_ == 14:
                 self.enterOuterAlt(localctx, 14)
                 self.state = 191
                 self.classicalComparison()
                 pass
-            elif token in [QuilParser.LOAD]:
+
+            elif la_ == 15:
                 self.enterOuterAlt(localctx, 15)
                 self.state = 192
                 self.load()
                 pass
-            elif token in [QuilParser.STORE]:
+
+            elif la_ == 16:
                 self.enterOuterAlt(localctx, 16)
                 self.state = 193
                 self.store()
                 pass
-            elif token in [QuilParser.NOP]:
+
+            elif la_ == 17:
                 self.enterOuterAlt(localctx, 17)
                 self.state = 194
                 self.nop()
                 pass
-            elif token in [QuilParser.INCLUDE]:
+
+            elif la_ == 18:
                 self.enterOuterAlt(localctx, 18)
                 self.state = 195
                 self.include()
                 pass
-            elif token in [QuilParser.PRAGMA]:
+
+            elif la_ == 19:
                 self.enterOuterAlt(localctx, 19)
                 self.state = 196
                 self.pragma()
                 pass
-            elif token in [QuilParser.PULSE]:
+
+            elif la_ == 20:
                 self.enterOuterAlt(localctx, 20)
                 self.state = 197
                 self.pulse()
                 pass
-            elif token in [QuilParser.SETFREQUENCY]:
+
+            elif la_ == 21:
                 self.enterOuterAlt(localctx, 21)
                 self.state = 198
                 self.setFrequency()
                 pass
-            elif token in [QuilParser.SETPHASE]:
+
+            elif la_ == 22:
                 self.enterOuterAlt(localctx, 22)
                 self.state = 199
                 self.setPhase()
                 pass
-            elif token in [QuilParser.SHIFTPHASE]:
+
+            elif la_ == 23:
                 self.enterOuterAlt(localctx, 23)
                 self.state = 200
                 self.shiftPhase()
                 pass
-            elif token in [QuilParser.SWAPPHASES]:
+
+            elif la_ == 24:
                 self.enterOuterAlt(localctx, 24)
                 self.state = 201
                 self.swapPhases()
                 pass
-            elif token in [QuilParser.SETSCALE]:
+
+            elif la_ == 25:
                 self.enterOuterAlt(localctx, 25)
                 self.state = 202
                 self.setScale()
                 pass
-            elif token in [QuilParser.CAPTURE]:
+
+            elif la_ == 26:
                 self.enterOuterAlt(localctx, 26)
                 self.state = 203
                 self.capture()
                 pass
-            elif token in [QuilParser.RAWCAPTURE]:
+
+            elif la_ == 27:
                 self.enterOuterAlt(localctx, 27)
                 self.state = 204
                 self.rawCapture()
                 pass
-            elif token in [QuilParser.DECLARE]:
+
+            elif la_ == 28:
                 self.enterOuterAlt(localctx, 28)
                 self.state = 205
                 self.memoryDescriptor()
                 pass
-            else:
-                raise NoViableAltException(self)
+
 
         except RecognitionException as re:
             localctx.exception = re
@@ -4691,7 +4723,7 @@ class QuilParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 562
             _la = self._input.LA(1)
-            if not(_la==QuilParser.SAMPLERATE or _la==QuilParser.INITIALFREQUENCY):
+            if not(_la==QuilParser.INITIALFREQUENCY or _la==QuilParser.SAMPLERATE):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -5085,6 +5117,9 @@ class QuilParser ( Parser ):
             return self.getTypedRuleContext(QuilParser.WaveformContext,0)
 
 
+        def NONBLOCKING(self):
+            return self.getToken(QuilParser.NONBLOCKING, 0)
+
         def getRuleIndex(self):
             return QuilParser.RULE_pulse
 
@@ -5103,13 +5138,22 @@ class QuilParser ( Parser ):
 
         localctx = QuilParser.PulseContext(self, self._ctx, self.state)
         self.enterRule(localctx, 118, self.RULE_pulse)
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 628
-            self.match(QuilParser.PULSE)
             self.state = 629
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            if _la==QuilParser.NONBLOCKING:
+                self.state = 628
+                self.match(QuilParser.NONBLOCKING)
+
+
+            self.state = 631
+            self.match(QuilParser.PULSE)
+            self.state = 632
             self.frame()
-            self.state = 630
+            self.state = 633
             self.waveform()
         except RecognitionException as re:
             localctx.exception = re
@@ -5141,6 +5185,9 @@ class QuilParser ( Parser ):
             return self.getTypedRuleContext(QuilParser.AddrContext,0)
 
 
+        def NONBLOCKING(self):
+            return self.getToken(QuilParser.NONBLOCKING, 0)
+
         def getRuleIndex(self):
             return QuilParser.RULE_capture
 
@@ -5159,15 +5206,24 @@ class QuilParser ( Parser ):
 
         localctx = QuilParser.CaptureContext(self, self._ctx, self.state)
         self.enterRule(localctx, 120, self.RULE_capture)
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 632
+            self.state = 636
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            if _la==QuilParser.NONBLOCKING:
+                self.state = 635
+                self.match(QuilParser.NONBLOCKING)
+
+
+            self.state = 638
             self.match(QuilParser.CAPTURE)
-            self.state = 633
+            self.state = 639
             self.frame()
-            self.state = 634
+            self.state = 640
             self.waveform()
-            self.state = 635
+            self.state = 641
             self.addr()
         except RecognitionException as re:
             localctx.exception = re
@@ -5199,6 +5255,9 @@ class QuilParser ( Parser ):
             return self.getTypedRuleContext(QuilParser.AddrContext,0)
 
 
+        def NONBLOCKING(self):
+            return self.getToken(QuilParser.NONBLOCKING, 0)
+
         def getRuleIndex(self):
             return QuilParser.RULE_rawCapture
 
@@ -5217,15 +5276,24 @@ class QuilParser ( Parser ):
 
         localctx = QuilParser.RawCaptureContext(self, self._ctx, self.state)
         self.enterRule(localctx, 122, self.RULE_rawCapture)
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 637
+            self.state = 644
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            if _la==QuilParser.NONBLOCKING:
+                self.state = 643
+                self.match(QuilParser.NONBLOCKING)
+
+
+            self.state = 646
             self.match(QuilParser.RAWCAPTURE)
-            self.state = 638
+            self.state = 647
             self.frame()
-            self.state = 639
+            self.state = 648
             self.expression(0)
-            self.state = 640
+            self.state = 649
             self.addr()
         except RecognitionException as re:
             localctx.exception = re
@@ -5273,11 +5341,11 @@ class QuilParser ( Parser ):
         self.enterRule(localctx, 124, self.RULE_setFrequency)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 642
+            self.state = 651
             self.match(QuilParser.SETFREQUENCY)
-            self.state = 643
+            self.state = 652
             self.frame()
-            self.state = 644
+            self.state = 653
             self.expression(0)
         except RecognitionException as re:
             localctx.exception = re
@@ -5325,11 +5393,11 @@ class QuilParser ( Parser ):
         self.enterRule(localctx, 126, self.RULE_setPhase)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 646
+            self.state = 655
             self.match(QuilParser.SETPHASE)
-            self.state = 647
+            self.state = 656
             self.frame()
-            self.state = 648
+            self.state = 657
             self.expression(0)
         except RecognitionException as re:
             localctx.exception = re
@@ -5377,11 +5445,11 @@ class QuilParser ( Parser ):
         self.enterRule(localctx, 128, self.RULE_shiftPhase)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 650
+            self.state = 659
             self.match(QuilParser.SHIFTPHASE)
-            self.state = 651
+            self.state = 660
             self.frame()
-            self.state = 652
+            self.state = 661
             self.expression(0)
         except RecognitionException as re:
             localctx.exception = re
@@ -5435,25 +5503,25 @@ class QuilParser ( Parser ):
         self.enterRule(localctx, 130, self.RULE_swapPhases)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 654
+            self.state = 663
             self.match(QuilParser.SWAPPHASES)
-            self.state = 655
+            self.state = 664
             self.frame()
-            self.state = 657 
+            self.state = 666 
             self._errHandler.sync(self)
             _alt = 1
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt == 1:
-                    self.state = 656
+                    self.state = 665
                     self.qubit()
 
                 else:
                     raise NoViableAltException(self)
-                self.state = 659 
+                self.state = 668 
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,55,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,58,self._ctx)
 
-            self.state = 661
+            self.state = 670
             self.frame()
         except RecognitionException as re:
             localctx.exception = re
@@ -5501,11 +5569,11 @@ class QuilParser ( Parser ):
         self.enterRule(localctx, 132, self.RULE_setScale)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 663
+            self.state = 672
             self.match(QuilParser.SETSCALE)
-            self.state = 664
+            self.state = 673
             self.frame()
-            self.state = 665
+            self.state = 674
             self.expression(0)
         except RecognitionException as re:
             localctx.exception = re
@@ -5563,33 +5631,33 @@ class QuilParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 667
+            self.state = 676
             self.match(QuilParser.DELAY)
-            self.state = 669 
+            self.state = 678 
             self._errHandler.sync(self)
             _alt = 1
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt == 1:
-                    self.state = 668
+                    self.state = 677
                     self.formalQubit()
 
                 else:
                     raise NoViableAltException(self)
-                self.state = 671 
+                self.state = 680 
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,56,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,59,self._ctx)
 
-            self.state = 676
+            self.state = 685
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==QuilParser.STRING:
-                self.state = 673
+                self.state = 682
                 self.match(QuilParser.STRING)
-                self.state = 678
+                self.state = 687
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 679
+            self.state = 688
             self.expression(0)
         except RecognitionException as re:
             localctx.exception = re
@@ -5637,15 +5705,15 @@ class QuilParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 681
+            self.state = 690
             self.match(QuilParser.FENCE)
-            self.state = 683 
+            self.state = 692 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
-                self.state = 682
+                self.state = 691
                 self.formalQubit()
-                self.state = 685 
+                self.state = 694 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if not (_la==QuilParser.IDENTIFIER or _la==QuilParser.INT):
@@ -5693,17 +5761,17 @@ class QuilParser ( Parser ):
         localctx = QuilParser.FormalQubitContext(self, self._ctx, self.state)
         self.enterRule(localctx, 138, self.RULE_formalQubit)
         try:
-            self.state = 689
+            self.state = 698
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [QuilParser.INT]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 687
+                self.state = 696
                 self.qubit()
                 pass
             elif token in [QuilParser.IDENTIFIER]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 688
+                self.state = 697
                 self.qubitVariable()
                 pass
             else:
@@ -5752,9 +5820,9 @@ class QuilParser ( Parser ):
         self.enterRule(localctx, 140, self.RULE_namedParam)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 691
+            self.state = 700
             self.colonTerminatedName()
-            self.state = 692
+            self.state = 701
             self.expression(0)
         except RecognitionException as re:
             localctx.exception = re
@@ -5815,29 +5883,29 @@ class QuilParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 694
+            self.state = 703
             self.name()
-            self.state = 706
+            self.state = 715
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==QuilParser.LPAREN:
-                self.state = 695
+                self.state = 704
                 self.match(QuilParser.LPAREN)
-                self.state = 696
+                self.state = 705
                 self.namedParam()
-                self.state = 701
+                self.state = 710
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while _la==QuilParser.COMMA:
-                    self.state = 697
+                    self.state = 706
                     self.match(QuilParser.COMMA)
-                    self.state = 698
+                    self.state = 707
                     self.namedParam()
-                    self.state = 703
+                    self.state = 712
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
-                self.state = 704
+                self.state = 713
                 self.match(QuilParser.RPAREN)
 
 
@@ -5879,7 +5947,7 @@ class QuilParser ( Parser ):
         self.enterRule(localctx, 144, self.RULE_colonTerminatedName)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 708
+            self.state = 717
             self.match(QuilParser.COLONTERMIDENT)
         except RecognitionException as re:
             localctx.exception = re
@@ -5927,19 +5995,19 @@ class QuilParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 711 
+            self.state = 720 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
-                self.state = 710
+                self.state = 719
                 self.formalQubit()
-                self.state = 713 
+                self.state = 722 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if not (_la==QuilParser.IDENTIFIER or _la==QuilParser.INT):
                     break
 
-            self.state = 715
+            self.state = 724
             self.match(QuilParser.STRING)
         except RecognitionException as re:
             localctx.exception = re

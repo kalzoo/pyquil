@@ -866,12 +866,13 @@ class RawInstr(AbstractInstruction):
 
 
 class Pulse(AbstractInstruction):
-    def __init__(self, frame, waveform):
+    def __init__(self, frame, waveform, nonblocking=False):
         self.frame = frame
         self.waveform = waveform
+        self.nonblocking = nonblocking
 
     def out(self):
-        return f'PULSE {self.frame} {self.waveform.out()}'
+        return f'{"NONBLOCKING " if self.nonblocking else ""}PULSE {self.frame} {self.waveform.out()}'
 
 
 class SetFrequency(AbstractInstruction):
@@ -920,24 +921,26 @@ class SetScale(AbstractInstruction):
 
 
 class Capture(AbstractInstruction):
-    def __init__(self, frame, waveform, memory_region):
+    def __init__(self, frame, waveform, memory_region, nonblocking=False):
         self.frame = frame
         self.waveform = waveform
         self.memory_region = memory_region
+        self.nonblocking = nonblocking
 
     def out(self):
-        return f'CAPTURE {self.frame} {self.waveform.out()}' \
+        return f'{"NONBLOCKING " if self.nonblocking else ""}CAPTURE {self.frame} {self.waveform.out()}' \
             + (' ' + self.memory_region.out() if self.memory_region is not None else '')
 
 
 class RawCapture(AbstractInstruction):
-    def __init__(self, frame, duration, memory_region):
+    def __init__(self, frame, duration, memory_region, nonblocking=False):
         self.frame = frame
         self.duration = duration
         self.memory_region = memory_region
+        self.nonblocking = nonblocking
 
     def out(self):
-        return f'CAPTURE {self.frame} {self.duration} {self.memory_region.out()}'
+        return f'{"NONBLOCKING " if self.nonblocking else ""}CAPTURE {self.frame} {self.duration} {self.memory_region.out()}'
 
 
 class Delay(AbstractInstruction):
@@ -952,7 +955,7 @@ class Delay(AbstractInstruction):
             ret += f' {q}'
         if self.explicit_frames is not None:
             for f in self.explicit_frames:
-                ret += f' {f}'
+                ret += f' "{f}"'
         ret += f' {self.duration}'
         return ret
 
@@ -1031,7 +1034,9 @@ class DefMeasureCalibration(AbstractInstruction):
 
 
 class DefFrame(AbstractInstruction):
-    def __init__(self, frame, options):
+    def __init__(self, frame, options=None):
+        if options is None:
+            options = list()
         self.frame = frame
         self.options = options
 

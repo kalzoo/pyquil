@@ -164,9 +164,9 @@ defWaveform         : DEFWAVEFORM name ( LPAREN param (COMMA param)* RPAREN )? r
 defCalibration      : DEFCAL name (LPAREN param ( COMMA param )* RPAREN)? formalQubit+ COLON ( NEWLINE TAB instr )* ;
 defMeasCalibration  : DEFCAL MEASURE formalQubit ( name )? COLON ( NEWLINE TAB instr )* ;
 
-pulse               : PULSE frame waveform ;
-capture             : CAPTURE frame waveform addr ;
-rawCapture          : RAWCAPTURE frame expression addr ;
+pulse               : NONBLOCKING? PULSE frame waveform ;
+capture             : NONBLOCKING? CAPTURE frame waveform addr ; // TODO: augment this to parse affine kernels
+rawCapture          : NONBLOCKING? RAWCAPTURE frame expression addr ;
 
 setFrequency        : SETFREQUENCY frame expression ;
 setPhase            : SETPHASE frame expression ;
@@ -263,21 +263,22 @@ POWER               : '^' ;
 
 // analog keywords
 
-DEFFRAME            : 'DEFFRAME' ;
-SAMPLERATE          : 'SAMPLE-RATE' ;
-INITIALFREQUENCY    : 'INITIAL-FREQUENCY' ;
-DEFWAVEFORM         : 'DEFWAVEFORM' ;
-PULSE               : 'PULSE' ;
-SETFREQUENCY        : 'SET-FREQUENCY' ;
-SETPHASE            : 'SET-PHASE' ;
-SHIFTPHASE          : 'SHIFT-PHASE' ;
-SWAPPHASES          : 'SWAP-PHASES' ;
-SETSCALE            : 'SET-SCALE' ;
 CAPTURE             : 'CAPTURE' ;
-RAWCAPTURE          : 'RAW-CAPTURE' ;
 DEFCAL              : 'DEFCAL' ;
+DEFFRAME            : 'DEFFRAME' ;
+DEFWAVEFORM         : 'DEFWAVEFORM' ;
 DELAY               : 'DELAY' ;
 FENCE               : 'FENCE' ;
+INITIALFREQUENCY    : 'INITIAL-FREQUENCY' ;
+NONBLOCKING         : 'NONBLOCKING' ;
+PULSE               : 'PULSE' ;
+SAMPLERATE          : 'SAMPLE-RATE' ;
+SETFREQUENCY        : 'SET-FREQUENCY' ;
+SETPHASE            : 'SET-PHASE' ;
+SETSCALE            : 'SET-SCALE' ;
+SHIFTPHASE          : 'SHIFT-PHASE' ;
+SWAPPHASES          : 'SWAP-PHASES' ;
+RAWCAPTURE          : 'RAW-CAPTURE' ;
 
 // Modifiers
 

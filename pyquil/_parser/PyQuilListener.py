@@ -414,7 +414,7 @@ class PyQuilListener(QuilListener):
     def exitPulse(self, ctx:QuilParser.PulseContext):
         frame = _frame(ctx.frame())
         waveform = _waveform(ctx.waveform())
-        self.result.append(Pulse(frame, waveform))
+        self.result.append(Pulse(frame, waveform, nonblocking=True if ctx.NONBLOCKING() else False))
 
     def exitSetFrequency(self, ctx:QuilParser.SetFrequencyContext):
         frame = _frame(ctx.frame())
@@ -445,13 +445,13 @@ class PyQuilListener(QuilListener):
         frame = _frame(ctx.frame())
         waveform = _waveform(ctx.waveform())
         memory_region = _addr(ctx.addr())
-        self.result.append(Capture(frame, waveform, memory_region))
+        self.result.append(Capture(frame, waveform, memory_region, nonblocking=True if ctx.NONBLOCKING() else False))
 
     def exitRawCapture(self, ctx:QuilParser.RawCaptureContext):
         frame = _frame(ctx.frame())
         duration = _expression(ctx.expression())
         memory_region = _addr(ctx.addr())
-        self.result.append(RawCapture(frame, duration, memory_region))
+        self.result.append(RawCapture(frame, duration, memory_region, nonblocking=True if ctx.NONBLOCKING() else False))
 
     def exitDelay(self, ctx:QuilParser.DelayContext):
         qubits = [_formal_qubit(q) for q in ctx.formalQubit()]
