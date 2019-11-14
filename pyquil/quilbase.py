@@ -987,10 +987,9 @@ class DefWaveform(AbstractInstruction):
                 ret += f", {param}"
             ret += ")"
         ret += f" {self.sample_rate} :\n    "
-        first_entry, *entries = self.entries
-        ret += str(first_entry)
-        for entry in entries:
-            ret += f", {entry}"
+        def _iq_str(iq):
+            return f"{iq.real} + ({iq.imag})*i"
+        ret += ", ".join(map(_iq_str, self.entries))
         return ret
 
 
