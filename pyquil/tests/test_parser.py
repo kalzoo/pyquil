@@ -408,3 +408,22 @@ def test_parsing_defwaveform():
     parse_equals("DEFWAVEFORM foo(%theta) 1.0:\n"
                  "    1.0+2.0*i, 1.0-2.0*i, 3.0*%theta\n",
                  DefWaveform("foo", [Parameter('theta')], 1.0, [1+2j, 1-2j, Mul(3.0, Parameter('theta'))]))
+
+
+def test_parsing_defframe():
+    parse_equals("DEFFRAME 0 \"rf\"",
+                 DefFrame(Frame([Qubit(0)], "rf")))
+    parse_equals("DEFFRAME 1 0 \"ff\"",
+                 DefFrame(Frame([Qubit(1), Qubit(0)], "ff")))
+    parse_equals("DEFFRAME 0 \"rf\":\n"
+                 "    SAMPLE-RATE: 2.0\n",
+                 DefFrame(Frame([Qubit(0)], "rf"), options={'SAMPLE-RATE': 2.0}))
+    parse_equals("DEFFRAME 0 \"rf\":\n"
+                 "    SAMPLE-RATE: 2.0\n"
+                 "    INITIAL-FREQUENCY: 10\n", # TODO: should this parse as a float?
+                 DefFrame(Frame([Qubit(0)], "rf"), options={'SAMPLE-RATE': 2.0,
+                                                            'INITIAL-FREQUENCY': 10}))
+    with pytest.raises(RuntimeError):
+        parse_equals("DEFFRAME 0 \"rf\":\n"
+                     "    UNSUPPORTED: 2.0\n",
+                     DefFrame(Frame([Qubit(0)], "rf"), options={'UNSUPPORTED': 2.0}))

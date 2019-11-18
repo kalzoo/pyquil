@@ -8,6 +8,7 @@ quil                : allInstr? ( NEWLINE+ allInstr )* NEWLINE* EOF ;
 
 allInstr            : defGate
                     | defCircuit
+                    | defFrame
                     | defWaveform
                     | defCalibration
                     | defMeasCalibration
@@ -157,7 +158,7 @@ realN               : FLOAT | INT ;
 // Analog control
 
 defFrame            : DEFFRAME frame ( COLON frameSpec+ )? ;
-frameSpec           : TAB frameAttr COLON expression ;
+frameSpec           : NEWLINE TAB frameAttr COLON expression ;
 frameAttr           : SAMPLERATE | INITIALFREQUENCY ;
 
 defWaveform         : DEFWAVEFORM name ( LPAREN param (COMMA param)* RPAREN )? realN COLON NEWLINE matrix ;

@@ -373,8 +373,8 @@ class PyQuilListener(QuilListener):
                                    shared_region=shared_region, offsets=offsets))
 
     def exitDefFrame(self, ctx:QuilParser.DefFrameContext):
-        frame = _frame(self.frame())
-        options = {item.frameAttr.getText(): _expression(item.expression()) for item in self.frameSpec()}
+        frame = _frame(ctx.frame())
+        options = {item.frameAttr().getText(): _expression(item.expression()) for item in ctx.frameSpec()}
         self.result.append(DefFrame(frame, options))
 
     def enterDefCalibration(self, ctx:QuilParser.DefCalibrationContext):
