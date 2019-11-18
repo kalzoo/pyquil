@@ -19,7 +19,7 @@ import pytest
 from pyquil.gates import *
 from pyquil.parameters import Parameter, quil_sin, quil_cos
 from pyquil.parser import parse
-from pyquil.quilatom import Addr, MemoryReference, Frame, Waveform, Mul, Div
+from pyquil.quilatom import Addr, MemoryReference, Frame, Waveform, Mul, Div, FormalArgument
 from pyquil.quilbase import (Declare, Reset, ResetQubit, Label, JumpTarget, Jump, JumpWhen, \
                              JumpUnless, DefGate, DefPermutationGate, Qubit, Pragma, RawInstr, \
                              Pulse, SetFrequency, SetPhase, ShiftPhase, SwapPhase, SetScale, \
@@ -433,13 +433,30 @@ def test_parsing_defcal():
     parse_equals("DEFCAL X 0:\n"
                  "    NOP\n",
                  DefCalibration("X", [], [Qubit(0)], [NOP]))
-
-    # TODO: it would be nice to have an actual class for formal references
-    #       e.g. the analog here of Parameter. this is sort of what QubitPlaceholder does, but not quite
     parse_equals("DEFCAL X q:\n"
+                 "    NOP\n"
                  "    NOP\n",
-                 DefCalibration("X", [], ['q'], [NOP]))
+                 DefCalibration("X", [], [FormalArgument('q')], [NOP, NOP]))
     parse_equals("DEFCAL RZ(%theta) 0:\n"
                  "    SHIFT-PHASE 0 \"rf\" %theta/(-2*pi)\n",
                  DefCalibration("RZ", [Parameter('theta')], [Qubit(0)],
                                 [ShiftPhase(Frame([Qubit(0)], "rf"), Div(Parameter('theta'),-2*np.pi))]))
+
+
+def test_parsing_defcal_measure():
+    parse_equals("DEFCAL MEASURE 0:\n"
+                 "    NOP\n",
+                 DefMeasureCalibration(Qubit(0), None, [NOP]))
+    wf = Waveform("flat", {'duration': 1.0, 'iq': 1.0+0.0j})
+    # TODO: note that in a calibration body, reference to the formal argument addr parses
+    #       as a memoryreference.
+    parse_equals("DEFCAL MEASURE q addr:\n"
+                 "    PULSE q \"ro_tx\" flat(duration: 1.0, iq: 1.0+0.0*i)\n"
+                 "    CAPTURE q \"ro_rx\" flat(duration: 1.0, iq: 1.0+0*i) addr[0]",
+                 DefMeasureCalibration(FormalArgument('q'), FormalArgument('addr'),
+                                       [Pulse(Frame([FormalArgument('q')], "ro_tx"), wf),
+                                        Capture(Frame([FormalArgument('q')], "ro_rx"), wf,
+                                                MemoryReference('addr'))]))
+
+    # TODO: we actually don't have a way to execute a capture without a memory reference
+    # what does this mean for something like 'MEASURE 0'?
