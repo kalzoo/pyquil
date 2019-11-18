@@ -728,15 +728,6 @@ class QuilListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by QuilParser#colonTerminatedName.
-    def enterColonTerminatedName(self, ctx:QuilParser.ColonTerminatedNameContext):
-        pass
-
-    # Exit a parse tree produced by QuilParser#colonTerminatedName.
-    def exitColonTerminatedName(self, ctx:QuilParser.ColonTerminatedNameContext):
-        pass
-
-
     # Enter a parse tree produced by QuilParser#frame.
     def enterFrame(self, ctx:QuilParser.FrameContext):
         pass
