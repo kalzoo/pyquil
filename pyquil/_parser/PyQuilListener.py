@@ -565,7 +565,7 @@ def _expression(expression):
 def _named_parameters(params):
     ret = dict()
     for param in params:
-        name = param.colonTerminatedName().getText()[:-1]
+        name = param.IDENTIFIER()
         expr = _expression(param.expression())
         ret[name] = expr
     return ret
@@ -647,5 +647,5 @@ def _waveform(wf):
 def _frame(frame):
     # type (QuilParser.FrameContext) -> Frame
     qubits = [_formal_qubit(q) for q in frame.formalQubit()]
-    name = frame.getText()
+    name = frame.STRING().getText().replace("\"","")
     return Frame(qubits, name)
