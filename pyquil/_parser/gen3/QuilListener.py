@@ -665,12 +665,12 @@ class QuilListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by QuilParser#swapPhases.
-    def enterSwapPhases(self, ctx:QuilParser.SwapPhasesContext):
+    # Enter a parse tree produced by QuilParser#swapPhase.
+    def enterSwapPhase(self, ctx:QuilParser.SwapPhaseContext):
         pass
 
-    # Exit a parse tree produced by QuilParser#swapPhases.
-    def exitSwapPhases(self, ctx:QuilParser.SwapPhasesContext):
+    # Exit a parse tree produced by QuilParser#swapPhase.
+    def exitSwapPhase(self, ctx:QuilParser.SwapPhaseContext):
         pass
 
 
