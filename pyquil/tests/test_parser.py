@@ -333,3 +333,27 @@ def test_parse_pulse():
                  Pulse(Frame([Qubit(0),Qubit(1)], "ff"), wf))
     parse_equals("NONBLOCKING PULSE 0 \"rf\" flat(duration: 1.0, iq: 1.0)",
                  Pulse(Frame([Qubit(0)],"rf"), wf, nonblocking=True))
+
+
+def test_parsing_capture():
+    wf = Waveform("flat", {'duration': 1.0, 'iq': 1.0})
+    parse_equals("DECLARE iq REAL[2]\n"
+                 "CAPTURE 0 \"ro_rx\" flat(duration: 1.0, iq: 1.0) iq",
+                 Declare('iq', 'REAL', 2),
+                 Capture(Frame([Qubit(0)], "ro_rx"), wf, MemoryReference('iq')))
+    parse_equals("DECLARE iq REAL[2]\n"
+                 "NONBLOCKING CAPTURE 0 \"ro_rx\" flat(duration: 1.0, iq: 1.0) iq",
+                 Declare('iq', 'REAL', 2),
+                 Capture(Frame([Qubit(0)], "ro_rx"), wf, MemoryReference('iq'), nonblocking=True))
+
+
+def test_parsing_raw_capture():
+    parse_equals("DECLARE iqs REAL[200000]\n"
+                 "RAW-CAPTURE 0 \"ro_rx\" 0.001 iqs",
+                 Declare('iqs', 'REAL', 200000),
+                 RawCapture(Frame([Qubit(0)], "ro_rx"), 0.001, MemoryReference('iqs')))
+    parse_equals("DECLARE iqs REAL[200000]\n"
+                 "NONBLOCKING RAW-CAPTURE 0 \"ro_rx\" 0.001 iqs",
+                 Declare('iqs', 'REAL', 200000),
+                 RawCapture(Frame([Qubit(0)], "ro_rx"), 0.001, MemoryReference('iqs'), nonblocking=True))
+
