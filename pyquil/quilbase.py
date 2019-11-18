@@ -902,13 +902,13 @@ class ShiftPhase(AbstractInstruction):
         return f'SHIFT-PHASE {self.frame} {self.phase}'
 
 
-class SwapPhases(AbstractInstruction):
+class SwapPhase(AbstractInstruction):
     def __init__(self, frameA, frameB):
         self.frameA = frameA
         self.frameB = frameB
 
     def out(self):
-        return f"SWAP-PHASES {self.frameA} {self.frameB}"
+        return f"SWAP-PHASE {self.frameA} {self.frameB}"
 
 
 class SetScale(AbstractInstruction):

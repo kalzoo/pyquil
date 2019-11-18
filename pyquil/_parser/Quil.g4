@@ -37,7 +37,7 @@ instr               : fence
                     | setFrequency
                     | setPhase
                     | shiftPhase
-                    | swapPhases
+                    | swapPhase
                     | setScale
                     | capture
                     | rawCapture
@@ -171,7 +171,7 @@ rawCapture          : NONBLOCKING? RAWCAPTURE frame expression addr ;
 setFrequency        : SETFREQUENCY frame expression ;
 setPhase            : SETPHASE frame expression ;
 shiftPhase          : SHIFTPHASE frame expression ;
-swapPhases          : SWAPPHASES frame qubit+ frame ;
+swapPhase           : SWAPPHASE frame frame ;
 setScale            : SETSCALE frame expression ;
 
 delay               : DELAY formalQubit+ STRING* expression ;
@@ -276,7 +276,7 @@ SETFREQUENCY        : 'SET-FREQUENCY' ;
 SETPHASE            : 'SET-PHASE' ;
 SETSCALE            : 'SET-SCALE' ;
 SHIFTPHASE          : 'SHIFT-PHASE' ;
-SWAPPHASES          : 'SWAP-PHASES' ;
+SWAPPHASE           : 'SWAP-PHASE' ;
 RAWCAPTURE          : 'RAW-CAPTURE' ;
 
 // Modifiers

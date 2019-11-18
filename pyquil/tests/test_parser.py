@@ -22,7 +22,7 @@ from pyquil.parser import parse
 from pyquil.quilatom import Addr, MemoryReference, Frame, Waveform
 from pyquil.quilbase import (Declare, Reset, ResetQubit, Label, JumpTarget, Jump, JumpWhen, \
                              JumpUnless, DefGate, DefPermutationGate, Qubit, Pragma, RawInstr, \
-                             Pulse, SetFrequency, SetPhase, ShiftPhase, SwapPhases, SetScale, \
+                             Pulse, SetFrequency, SetPhase, ShiftPhase, SwapPhase, SetScale, \
                              Capture, RawCapture, Delay, Fence)
 from pyquil.tests.utils import parse_equals
 
@@ -357,3 +357,27 @@ def test_parsing_raw_capture():
                  Declare('iqs', 'REAL', 200000),
                  RawCapture(Frame([Qubit(0)], "ro_rx"), 0.001, MemoryReference('iqs'), nonblocking=True))
 
+
+def test_parsing_frame_mutations():
+    ops = [("SET-PHASE", SetPhase),
+           ("SHIFT-PHASE", ShiftPhase),
+           ("SET-SCALE", SetScale),
+           ("SET-FREQUENCY", SetFrequency)]
+    frames = [("0 \"rf\"", Frame([Qubit(0)], "rf")),
+              ("0 1 \"ff\"", Frame([Qubit(0), Qubit(1)], "ff")),
+              ("1 0 \"ff\"", Frame([Qubit(1), Qubit(0)], "ff"))]
+    values = [("1", 1), # TODO: should we require a float here?
+              ("1.0", 1.0),
+              ("pi/2", np.pi/2)]
+    for op_str, op in ops:
+        for frame_str, frame in frames:
+            for val_str, val in values:
+                parse_equals(f"{op_str} {frame_str} {val_str}",
+                             op(frame, val))
+
+
+def test_parsing_swap_phase():
+    parse_equals("SWAP-PHASE 0 \"rf\" 1 \"rf\"",
+                 SwapPhase(Frame([Qubit(0)], "rf"), Frame([Qubit(1)], "rf")))
+    parse_equals("SWAP-PHASE 0 1 \"ff\" 1 0 \"ff\"",
+                 SwapPhase(Frame([Qubit(0), Qubit(1)], "ff"), Frame([Qubit(1), Qubit(0)], "ff")))

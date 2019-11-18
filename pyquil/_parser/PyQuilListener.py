@@ -42,7 +42,7 @@ from pyquil.quilbase import (Gate, DefGate, DefPermutationGate, Measurement, Jum
                              ClassicalDiv,
                              RawInstr, Qubit, Pragma, Declare, AbstractInstruction,
                              ClassicalTrue, ClassicalFalse, ClassicalOr, ResetQubit,
-                             Pulse, SetFrequency, SetPhase, ShiftPhase, SwapPhases, SetScale,
+                             Pulse, SetFrequency, SetPhase, ShiftPhase, SwapPhase, SetScale,
                              Capture, RawCapture, DefCalibration, DefMeasureCalibration, DefWaveform,
                              DefFrame,
                              Delay, Fence)
@@ -431,10 +431,10 @@ class PyQuilListener(QuilListener):
         phase = _expression(ctx.expression())
         self.result.append(ShiftPhase(frame, phase))
 
-    def exitSwapPhases(self, ctx:QuilParser.SwapPhasesContext):
+    def exitSwapPhase(self, ctx:QuilParser.SwapPhaseContext):
         frameA = _frame(ctx.frame(0))
         frameB = _frame(ctx.frame(1))
-        self.result.append(SwapPhases(frameA, frameB))
+        self.result.append(SwapPhase(frameA, frameB))
 
     def exitSetScale(self, ctx:QuilParser.SetScaleContext):
         frame = _frame(ctx.frame())
