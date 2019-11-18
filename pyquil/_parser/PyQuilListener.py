@@ -647,5 +647,5 @@ def _waveform(wf):
 def _frame(frame):
     # type (QuilParser.FrameContext) -> Frame
     qubits = [_formal_qubit(q) for q in frame.formalQubit()]
-    name = frame.STRING.getText()
+    name = frame.getText()
     return Frame(qubits, name)
