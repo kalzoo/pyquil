@@ -19,7 +19,7 @@ import pytest
 from pyquil.gates import *
 from pyquil.parameters import Parameter, quil_sin, quil_cos
 from pyquil.parser import parse
-from pyquil.quilatom import Addr, MemoryReference, Frame, Waveform, Mul
+from pyquil.quilatom import Addr, MemoryReference, Frame, Waveform, Mul, Div
 from pyquil.quilbase import (Declare, Reset, ResetQubit, Label, JumpTarget, Jump, JumpWhen, \
                              JumpUnless, DefGate, DefPermutationGate, Qubit, Pragma, RawInstr, \
                              Pulse, SetFrequency, SetPhase, ShiftPhase, SwapPhase, SetScale, \
@@ -427,3 +427,19 @@ def test_parsing_defframe():
         parse_equals("DEFFRAME 0 \"rf\":\n"
                      "    UNSUPPORTED: 2.0\n",
                      DefFrame(Frame([Qubit(0)], "rf"), options={'UNSUPPORTED': 2.0}))
+
+
+def test_parsing_defcal():
+    parse_equals("DEFCAL X 0:\n"
+                 "    NOP\n",
+                 DefCalibration("X", [], [Qubit(0)], [NOP]))
+
+    # TODO: it would be nice to have an actual class for formal references
+    #       e.g. the analog here of Parameter. this is sort of what QubitPlaceholder does, but not quite
+    parse_equals("DEFCAL X q:\n"
+                 "    NOP\n",
+                 DefCalibration("X", [], ['q'], [NOP]))
+    parse_equals("DEFCAL RZ(%theta) 0:\n"
+                 "    SHIFT-PHASE 0 \"rf\" %theta/(-2*pi)\n",
+                 DefCalibration("RZ", [Parameter('theta')], [Qubit(0)],
+                                [ShiftPhase(Frame([Qubit(0)], "rf"), Div(Parameter('theta'),-2*np.pi))]))
