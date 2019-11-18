@@ -455,7 +455,7 @@ class PyQuilListener(QuilListener):
 
     def exitDelay(self, ctx:QuilParser.DelayContext):
         qubits = [_formal_qubit(q) for q in ctx.formalQubit()]
-        explicit_frames = [s.getText() for s in ctx.STRING()]
+        explicit_frames = [s.getText().strip("\"") for s in ctx.STRING()]
         duration = _expression(ctx.expression())
         self.result.append(Delay(qubits, explicit_frames, duration))
 
@@ -647,5 +647,5 @@ def _waveform(wf):
 def _frame(frame):
     # type (QuilParser.FrameContext) -> Frame
     qubits = [_formal_qubit(q) for q in frame.formalQubit()]
-    name = frame.STRING().getText().replace("\"","")
+    name = frame.STRING().getText().strip("\"")
     return Frame(qubits, name)

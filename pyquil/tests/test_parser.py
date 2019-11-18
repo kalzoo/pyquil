@@ -381,3 +381,18 @@ def test_parsing_swap_phase():
                  SwapPhase(Frame([Qubit(0)], "rf"), Frame([Qubit(1)], "rf")))
     parse_equals("SWAP-PHASE 0 1 \"ff\" 1 0 \"ff\"",
                  SwapPhase(Frame([Qubit(0), Qubit(1)], "ff"), Frame([Qubit(1), Qubit(0)], "ff")))
+
+
+def test_parsing_delay():
+    parse_equals("DELAY 0 1.0",
+                 Delay([Qubit(0)], [], 1.0))
+    # TODO: should this be normalized to a floating point value?
+    parse_equals("DELAY 0 1",
+                 Delay([Qubit(0)], [], 1))
+    parse_equals("DELAY 0 1 1e-6",
+                 Delay([Qubit(0), Qubit(1)], [], 1e-6))
+    parse_equals("DELAY 0 \"rf\" 1.0",
+                 Delay([Qubit(0)], ["rf"], 1.0))
+    parse_equals("DELAY 0 \"ro_tx\" \"ro_rx\"  1.0",
+                 Delay([Qubit(0)], ["ro_tx", "ro_rx"], 1.0))
+
