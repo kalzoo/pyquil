@@ -940,7 +940,7 @@ class RawCapture(AbstractInstruction):
         self.nonblocking = nonblocking
 
     def out(self):
-        return f'{"NONBLOCKING " if self.nonblocking else ""}CAPTURE {self.frame} {self.duration} {self.memory_region.out()}'
+        return f'{"NONBLOCKING " if self.nonblocking else ""}RAW-CAPTURE {self.frame} {self.duration} {self.memory_region.out()}'
 
 
 class Delay(AbstractInstruction):
