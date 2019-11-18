@@ -19,11 +19,12 @@ import pytest
 from pyquil.gates import *
 from pyquil.parameters import Parameter, quil_sin, quil_cos
 from pyquil.parser import parse
-from pyquil.quilatom import Addr, MemoryReference, Frame, Waveform
+from pyquil.quilatom import Addr, MemoryReference, Frame, Waveform, Mul
 from pyquil.quilbase import (Declare, Reset, ResetQubit, Label, JumpTarget, Jump, JumpWhen, \
                              JumpUnless, DefGate, DefPermutationGate, Qubit, Pragma, RawInstr, \
                              Pulse, SetFrequency, SetPhase, ShiftPhase, SwapPhase, SetScale, \
-                             Capture, RawCapture, Delay, Fence)
+                             Capture, RawCapture, Delay, Fence,
+                             DefCalibration, DefMeasureCalibration, DefFrame, DefWaveform)
 from pyquil.tests.utils import parse_equals
 
 
@@ -396,3 +397,14 @@ def test_parsing_delay():
     parse_equals("DELAY 0 \"ro_tx\" \"ro_rx\"  1.0",
                  Delay([Qubit(0)], ["ro_tx", "ro_rx"], 1.0))
 
+
+def test_parsing_defwaveform():
+    parse_equals("DEFWAVEFORM foo 1.0:\n"
+                 "    1.0, 1.0, 1.0\n",
+                 DefWaveform("foo", [], 1.0, [1.0, 1.0, 1.0]))
+    parse_equals("DEFWAVEFORM foo 1.0:\n"
+                 "    1.0+2.0*i, 1.0-2.0*i, 3.0\n",
+                 DefWaveform("foo", [], 1.0, [1+2j, 1-2j, 3+0j]))
+    parse_equals("DEFWAVEFORM foo(%theta) 1.0:\n"
+                 "    1.0+2.0*i, 1.0-2.0*i, 3.0*%theta\n",
+                 DefWaveform("foo", [Parameter('theta')], 1.0, [1+2j, 1-2j, Mul(3.0, Parameter('theta'))]))

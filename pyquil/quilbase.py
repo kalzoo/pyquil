@@ -17,6 +17,7 @@
 Contains the core pyQuil objects that correspond to Quil instructions.
 """
 import numpy as np
+from numbers import Complex
 from six import integer_types, string_types
 from warnings import warn
 
@@ -976,6 +977,9 @@ class DefWaveform(AbstractInstruction):
         self.name = name
         self.parameters = parameters
         self.entries = entries
+        for e in entries:
+            if not isinstance(e, (Complex, Expression)):
+                raise TypeError(f"Unsupported waveform entry {e}")
         self.sample_rate = sample_rate
 
     def out(self):
@@ -988,7 +992,8 @@ class DefWaveform(AbstractInstruction):
             ret += ")"
         ret += f" {self.sample_rate} :\n    "
         def _iq_str(iq):
-            return f"{iq.real} + ({iq.imag})*i"
+            return str(iq) if isinstance(iq, Expression) else f"{iq.real} + ({iq.imag})*i"
+
         ret += ", ".join(map(_iq_str, self.entries))
         return ret
 
