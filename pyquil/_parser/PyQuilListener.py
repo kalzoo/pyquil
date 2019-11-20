@@ -565,7 +565,7 @@ def _expression(expression):
 def _named_parameters(params):
     ret = dict()
     for param in params:
-        name = param.IDENTIFIER()
+        name = param.IDENTIFIER().getText()
         expr = _expression(param.expression())
         ret[name] = expr
     return ret
