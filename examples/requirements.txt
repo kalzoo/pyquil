@@ -4,3 +4,6 @@ scipy
 networkx
 jupyter
 matplotlib
+openfermion
+openfermionpsi4
+grove
